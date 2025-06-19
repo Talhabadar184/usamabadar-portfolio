@@ -32,7 +32,7 @@ const projects = [
       •	Evaluated management’s assessments and disclosures related to contingent liabilities under IAS 37 – Provisions, Contingent Liabilities, and Contingent Assets, ensuring sufficient audit evidence and appropriate accounting treatment.\n
       •	Collaborated with internal and external legal counsel to assess the likelihood and financial impact of ongoing litigations and regulatory matters.  \n
       •	Prepared the audit report and management letter, summarizing key issues, control observations, and value-adding recommendations. \n
-      •	Delivered a well-organized and audit-ready file, reviewed by audit managers and partners without major revisions, reflecting strong attention to detail and professional judgment. \n` ,
+      ` ,
     link: "https://serviceglobalfootwear.com/",
   },
   {

@@ -109,7 +109,7 @@ const Resume = () => {
            <p className="font-medium text-blue-700">Certified Finance and Accounting Professional (CFAP), CA Finalist</p>
             <p>Institute of Chartered Accountants of Pakistan</p>
             <p className="text-sm text-gray-600 mt-2">
-            CA Finalist since 2022 with 3 papers remaining for CA qualification along with doing mandatory CA Articleship from Nexia International which is to be completed in September 2025.            </p>
+            CA Finalist (since 2022) with three papers remaining for qualification. Currently completing mandatory articleship at Nexia International.            </p>
             <hr className="my-4" />
 
           </div>
@@ -155,7 +155,7 @@ const Resume = () => {
 <p> 
 Punjab Board of Intermediate and Secondary Education</p>
             <p className="text-sm text-gray-600 mt-2">
-            Achieved 78% score in 12th grade board examinations while actively participating in extracurricular activities, (table tennis and footblall) demonstrating consistent academic excellence and a well-rounded skill set.
+            Achieved 78% score in 12th grade board examinations while actively participating in extracurricular activities, (table tennis and football) demonstrating consistent academic excellence and a well-rounded skill set.
             </p>
             <hr className="my-4" />
           </div>
