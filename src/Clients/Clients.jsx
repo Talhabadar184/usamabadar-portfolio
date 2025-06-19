@@ -161,7 +161,7 @@ const projects = [
     link: "https://www.adamjeeinsurance.com/",
   },
   {
-    title: "Sefam (Private) Limited",
+    title: "Mr Mr <MR (Private) Limited",
     subtitle: "Business Process Engineering (BPR) and Standard operating procedures (SOPs)",
     image: sefam,
     description:
