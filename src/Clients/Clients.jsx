@@ -171,11 +171,11 @@ const projects = [
       •	Performed a detailed Gap Analysis, identifying control weaknesses, duplication of efforts, and compliance issues across key business functions. \n
       •	Developed a comprehensive recommendation report, providing actionable solutions to improve operational efficiency, strengthen controls, and align with industry best practices. \n
       •	Designed and developed Standard Operating Procedures (SOPs) from scratch for critical business functions in Finance, HR, and IT, ensuring clear roles, responsibilities, and approval hierarchies. \n
-      •	Created a full suite of customized supporting documents and templates, including:
+      •	Created a full suite of customized supporting documents and templates including:
 o	Purchase Order (PO) \n
 o	Inward Gate Pass (IGP) \n
 o	Sales Reconciliation Report \n
-o	Leave Application Form, Asset Requisition Form, and IT Ticket Request Form  \n
+o	Leave application form and Asset Requisition Form etc.  \n
       •	Ensured that SOPs and documentation adhered to regulatory compliance standards and were practical for day-to-day implementation. \n
       •	Delivered presentations and conducted walkthroughs with the client’s department heads to train staff on new processes and documentation.  \n
       •	Ensured timely delivery of all milestones within project scope, while maintaining high standards of documentation and client communication. \n
