@@ -66,7 +66,7 @@ const projects = [
     subtitle:"Demerger and Financial Audit - Annual",
     image: services,
     description:
-      `•	Led the first statutory audit of Service Retail (Private) Limited, incorporated as a result of the demerger from Service Industries Limited. \n.
+      `• Led the first statutory audit of Service Retail (Private) Limited, incorporated as a result of the demerger from Service Industries Limited. \n
       •	Prepared the initial complete set of financial statements, ensuring accurate recognition of opening balances in line with the approved demerger certificate and scheme of arrangement. \n
       •	Ensured proper transfer and presentation of assets, liabilities, and equity, maintaining compliance with the Companies Act, 2017 and relevant IFRS/IAS requirements. \n
       •	Verified alignment of financial records with demerger documents and facilitated compliance with SECP regulations for newly formed entities. \n
@@ -171,11 +171,7 @@ const projects = [
       •	Performed a detailed Gap Analysis, identifying control weaknesses, duplication of efforts, and compliance issues across key business functions. \n
       •	Developed a comprehensive recommendation report, providing actionable solutions to improve operational efficiency, strengthen controls, and align with industry best practices. \n
       •	Designed and developed Standard Operating Procedures (SOPs) from scratch for critical business functions in Finance, HR, and IT, ensuring clear roles, responsibilities, and approval hierarchies. \n
-      •	Created a full suite of customized supporting documents and templates including:
-o	Purchase Order (PO) \n
-o	Inward Gate Pass (IGP) \n
-o	Sales Reconciliation Report \n
-o	Leave application form and Asset Requisition Form etc.  \n
+      •	Created a full suite of customized supporting documents and templates including: Purchase Order (PO), Inward Gate Pass (IGP), Sales Reconciliation Report, Leave application form and Asset Requisition Form etc.  \n
       •	Ensured that SOPs and documentation adhered to regulatory compliance standards and were practical for day-to-day implementation. \n
       •	Delivered presentations and conducted walkthroughs with the client’s department heads to train staff on new processes and documentation.  \n
       •	Ensured timely delivery of all milestones within project scope, while maintaining high standards of documentation and client communication. \n
