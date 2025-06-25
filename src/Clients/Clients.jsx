@@ -11,7 +11,7 @@ import SG from "../assets/Clients/SG.svg"
 import Sindh from "../assets/Clients/sindh.svg"
 import Gray from "../assets/Clients/gray.svg"
 import stylers from "../assets/Clients/stylers.svg"
-import NC from "../assets/Clients/NC.svg"
+import NC from "../assets/Clients/NC.svg" 
 import Master from "../assets/Clients/Master.svg"
 import HND from "../assets/Clients/HND.svg"
 import services_foot from "../assets/Clients/services_foot.svg";
