@@ -67,9 +67,11 @@ function Home() {
     Chartered Accountant (Finalist)
   </p>
 
-  <button className="hover:cursor-pointer mt-6 w-fit bg-blue-700 hover:bg-blue-800 text-white px-5 py-2 md:px-6 md:py-3 rounded-full flex items-center gap-2 shadow-lg animate-fade-up delay-300">
+  <a href="/Usama badar (1).pdf"
+  print 
+  className="hover:cursor-pointer mt-6 w-fit bg-blue-700 hover:bg-blue-800 text-white px-5 py-2 md:px-6 md:py-3 rounded-full flex items-center gap-2 shadow-lg animate-fade-up delay-300">
     Print Resume
-  </button>
+  </a>
 </div>
 
     </div>
