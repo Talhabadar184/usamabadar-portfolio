@@ -3,7 +3,8 @@ import fb from "../assets/Home/fb.png";
 import insta from "../assets/Home/insta.png";
 import linkedin from "../assets/Home/linke.png";
 import twitter from "../assets/Home/twitter.png";
-import mainBg from "../assets/Home/main1.jpg";
+import mainBg from "../assets/Home/main4.jpg";
+
 
 function Home() {
   const [showFirstText, setShowFirstText] = useState(true);
@@ -41,28 +42,28 @@ function Home() {
 
   <h2 
     data-aos="fade-up" 
-    className="text-2xl md:text-3xl lg:text-4xl lg:text-black font-light animate-fade-up delay-100"
+    className="text-2xl md:text-3xl lg:text-4xl lg:text-white font-light animate-fade-up delay-100"
   >
     Hello, I am
   </h2>
 
   <h1
     data-aos="fade-up"
-    className="text-4xl md:text-6xl lg:text-black font-bold italic mt-2 animate-fade-up delay-500"
+    className="text-4xl md:text-6xl lg:text-white  font-bold italic  mt-2 animate-fade-up delay-500"
   >
     Usama Badar
   </h1>
 
   <h1
     data-aos="fade-up"
-    className="mt-3 text-xl md:text-2xl font-bold lg:text-black tracking-wide animate-fade-up delay-1000"
+    className="mt-3 text-xl md:text-2xl  font-bold lg:text-white tracking-wide animate-fade-up delay-1000"
   >
     Audit Senior - Nexia International
   </h1>
 
   <p
     data-aos="fade-up"
-    className="mt-2 text-lg md:text-2xl font-bold lg:text-black transition-opacity duration-1000 delay-2000 ease-in-out"
+    className="mt-2 text-lg md:text-2xl font-bold text-grey-500 transition-opacity duration-1000 delay-2000 ease-in-out"
   >
     Chartered Accountant (Finalist)
   </p>
