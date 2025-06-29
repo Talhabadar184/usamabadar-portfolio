@@ -3,7 +3,7 @@ import fb from "../assets/Home/fb.png";
 import insta from "../assets/Home/insta.png";
 import linkedin from "../assets/Home/linke.png";
 import twitter from "../assets/Home/twitter.png";
-import mainBg from "../assets/Home/main4.jpg";
+import mainBg from "../assets/Home/main7.jpg";
 
 
 function Home() {
