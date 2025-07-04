@@ -8,7 +8,7 @@ const About = () => {
         {/* Who Am I */}
         <div>
           <h2 className="text-2xl font-semibold mb-2 border-b-2 border-blue-700 inline-block">Who am I ?</h2>
-          <h3 className="mt-4 text-lg font-medium">Chartered ACcountant (Finalist)</h3>
+          <h3 className="mt-4 text-lg font-medium">Chartered Accountant (Finalist)</h3>
           <p className="mt-2 text-sm text-gray-600">
           As a CA Finalist and Audit Senior at Nexia International (Riaz Ahmad and Co. Chartered Accountants), I bring over two years of extensive experience in external auditing, specializing in conducting financial audits across various industries in compliance with IFRS and forensic audits. My role involves ensuring the accuracy and integrity of financial statements, while providing critical insights to clients on their financial reporting processes. I have had the opportunity to lead audit teams, where I took on the role of Audit Team Lead, effectively managing my team under pressure and ensuring the successful completion of audit engagements with tight deadlines.
 
