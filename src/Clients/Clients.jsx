@@ -146,7 +146,7 @@ const projects = [
     link: "https://www.mapleleafcapital.org/",
   },
   {
-    title: "Adamajee Insurance Company Limited ",
+    title: "Adamjee Insurance Company Limited ",
     subtitle: "Financial Audit – Interim",
     image: adam,
     description:

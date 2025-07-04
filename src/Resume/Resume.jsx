@@ -30,7 +30,7 @@ const Resume = () => {
         {/* Expertise */}
         <div className="border p-6">
           <h3 className="text-xl font-semibold border-b-2 border-blue-700 inline-block mb-4">
-            Expercience
+            Experience
           </h3>
           <div>
             <h4 className="text-blue-700 font-semibold">September 2024 - Present</h4>
