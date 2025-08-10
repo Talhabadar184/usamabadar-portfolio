@@ -14,7 +14,7 @@ const About = () => {
 
 I have also served as an Internal Auditor, where I was responsible for preparing in-depth Business Process Re-engineering (BPR), Internal audit reports, conducting gap analyses, and offering recommendations to enhance internal controls and align practices with industry standards.          </p>
 <a
-  href="/Usama badar (1).pdf"
+  href="/Usama Badar CV.pdf"
   download
   className="mt-4 inline-block px-5 py-2 border border-blue-700 text-blue-700 hover:bg-blue-800 hover:text-white transition rounded"
 >
@@ -39,7 +39,7 @@ I have also served as an Internal Auditor, where I was responsible for preparing
 
         {/* My Expertise */}
         <div>
-          <h2 className="text-2xl font-semibold mb-2 border-b-2 border-blue-700 inline-block">My Expertise</h2>
+          <h2 className="text-2xl font-semibold mb-2 border-b-2 border-blue-700 inline-block">My Skills and Expertise</h2>
           <div className="mt-4 space-y-6">
             <div>
               <h4 className="flex items-center gap-2 text-lg font-medium">

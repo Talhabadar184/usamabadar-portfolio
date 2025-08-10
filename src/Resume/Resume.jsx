@@ -178,7 +178,7 @@ Punjab Board of Intermediate and Secondary Education</p>
         {/* Skills */}
         <div className="border p-6">
           <h3 className="text-xl font-semibold border-b-2 border-blue-700 inline-block mb-4">
-            Skills
+            Skills and Expertise
           </h3>
 
           <div className="space-y-4 mt-4">

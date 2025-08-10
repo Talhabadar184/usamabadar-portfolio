@@ -66,9 +66,17 @@ function Home() {
     className="mt-2 text-lg md:text-2xl font-bold text-grey-500 transition-opacity duration-1000 delay-2000 ease-in-out"
   >
     Chartered Accountant (Finalist)
+     CA (F) ACCA (F)
+  </p>
+  <p
+    data-aos="fade-up"
+    className="mt-2 text-lg md:text-2xl font-bold text-grey-500 transition-opacity duration-1000 delay-2000 ease-in-out"
+  >
+   
+     CA (F) ACCA (F)
   </p>
 
-  <a href="/Usama badar (1).pdf"
+  <a href="/Usama Badar CV.pdf"
   print 
   className="hover:cursor-pointer mt-6 w-fit bg-blue-700 hover:bg-blue-800 text-white px-5 py-2 md:px-6 md:py-3 rounded-full flex items-center gap-2 shadow-lg animate-fade-up delay-300">
     Print Resume
