@@ -53,21 +53,6 @@ function Home() {
   >
     Usama Badar
   </h1>
-
-  <h1
-    data-aos="fade-up"
-    className="mt-3 text-xl md:text-2xl  font-bold lg:text-white tracking-wide animate-fade-up delay-1000"
-  >
-    Audit Senior - Nexia International
-  </h1>
-
-  <p
-    data-aos="fade-up"
-    className="mt-2 text-lg md:text-2xl font-bold text-grey-500 transition-opacity duration-1000 delay-2000 ease-in-out"
-  >
-    Chartered Accountant (Finalist)
-     CA (F) ACCA (F)
-  </p>
   <p
     data-aos="fade-up"
     className="mt-2 text-lg md:text-2xl font-bold text-grey-500 transition-opacity duration-1000 delay-2000 ease-in-out"
@@ -75,6 +60,22 @@ function Home() {
    
      CA (F) ACCA (F)
   </p>
+
+  <h1
+    data-aos="fade-up"
+    className="mt-3 text-xl md:text-2xl  font-bold lg:text-white tracking-wide animate-fade-up delay-1000"
+  >
+    AUDIT SENIOR - NEXIA INTERNATIONAL
+  </h1>
+
+  {/* <p
+    data-aos="fade-up"
+    className="mt-2 text-lg md:text-2xl font-bold text-grey-500 transition-opacity duration-1000 delay-2000 ease-in-out"
+  >
+    Chartered Accountant (Finalist)
+     
+  </p> */}
+  
 
   <a href="/Usama Badar CV.pdf"
   print 

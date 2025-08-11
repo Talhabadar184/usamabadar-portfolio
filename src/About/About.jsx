@@ -39,7 +39,7 @@ I have also served as an Internal Auditor, where I was responsible for preparing
 
         {/* My Expertise */}
         <div>
-          <h2 className="text-2xl font-semibold mb-2 border-b-2 border-blue-700 inline-block">My Skills and Expertise</h2>
+          <h2 className="text-2xl font-semibold mb-2 border-b-2 border-blue-700 inline-block"> Skills and Expertise</h2>
           <div className="mt-4 space-y-6">
             <div>
               <h4 className="flex items-center gap-2 text-lg font-medium">
