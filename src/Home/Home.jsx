@@ -51,7 +51,7 @@ function Home() {
     data-aos="fade-up"
     className="text-4xl md:text-6xl lg:text-white  font-bold italic  mt-2 animate-fade-up delay-500"
   >
-    Usama Badar
+    USAMA BADAR
   </h1>
   <p
     data-aos="fade-up"
