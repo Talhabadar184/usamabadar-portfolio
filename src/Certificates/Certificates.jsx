@@ -60,8 +60,8 @@ const projects = [
       •Application of professional skepticism and sound judgment in ethical decision-making.\n
       •Identification and resolution of ethical threats and conflicts of interest.\n
       •Promotion of integrity, transparency, and accountability in professional roles.\n
-      •Development of the right attitudes and behavior for leadership, public trust, and responsible governance.\n`,
-    link: "/PVEA.pdf",
+      •Development of the right attitudes and behavior for leadership, public trust, and responsible governance.
+`,     link: "/professional.pdf",
   },
   {
     title: "Data Management and Analytics - ICAP",
@@ -85,14 +85,14 @@ const projects = [
       •Application of creative writing strategies to improve engagement and impact.\n
       •Development of presentation skills, including audience analysis, visual aids, and confident delivery.\n
       •Practice through simulated board-level reports and live presentation exercises.\n`,
-    link: "/WTS.pdf",
+    link: "/writing.pdf",
   },
   {
     title: "Certificate in Accounting and Finance (CAF) ",
     image: certi9,
     description:
       "Completed CA Intermediate, Certificate in Accounting and Finance (CAF) in 2021.",
-    link: "/CAF.pdf",
+    link: "/accounting.pdf",
   },
   {
     title: "ACCA (Part Qualified)",
