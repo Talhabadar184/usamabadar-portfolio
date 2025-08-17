@@ -91,6 +91,7 @@ function App() {
 
       {/* ✅ Add Vercel Analytics here */}
       <Analytics />
+      <SpeedInsights />
     </BrowserRouter>
   );
 }
