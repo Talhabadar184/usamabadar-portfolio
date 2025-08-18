@@ -70,6 +70,7 @@ import Footer from "./Footer/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
+
 function App() {
   useEffect(() => {
     AOS.init({
@@ -80,6 +81,7 @@ function App() {
 
   return (
     <BrowserRouter>
+
       <section id="home"><Home /></section>
       <Navbar />
       <section id="about"><About /></section>
