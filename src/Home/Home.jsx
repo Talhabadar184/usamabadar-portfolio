@@ -55,14 +55,40 @@ function Home() {
     {
       icon: <FaUser />,
       number: "20+",
-      label: "Clients ",
+      label: "Clients with  deadlines  ",
       color: "from-blue-400 to-cyan-500",
     },
+    {
+      icon: <FaUser />,
+      number: "10+",
+      label: "Audits as Team Lead",
+      color: "from-blue-400 to-cyan-500",
+    },
+      {
+      icon: <FaBrain />,
+      // number: "4",
+      label: "Financial Statements Preparation & IFRS Expertise",
+      color: "from-purple-400 to-pink-500",
+    },
+    {
+      icon: <FaLightbulb />,
+      label:
+        "Fanancial Reporting, Planning & Analysis ",
+      color: "from-orange-400 to-red-500",
+    },
+    
+  ];
+  const stats1 = [
     {
       icon: <FaBrain />,
       number: "4",
       label: "Years Experience",
       color: "from-purple-400 to-pink-500",
+    },
+    {
+      icon: <MdManageAccounts size={18} />,
+      label: "Microsoft  Office, Oracle and Power BI",
+      color: "from-emerald-400 to-teal-500",
     },
     {
       icon: <MdManageAccounts size={18} />,
@@ -72,9 +98,10 @@ function Home() {
     {
       icon: <FaLightbulb />,
       label:
-        "Fanancial Planning & Reporting Financial Statements Preperation ",
+        "Audit Strategy & Internal Controls Evaluation",
       color: "from-orange-400 to-red-500",
     },
+    
   ];
 
   return (
@@ -183,11 +210,37 @@ function Home() {
           ))}
         </motion.div> */}
 
-        {/* Stats Grid */}
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
+          {/* Stats Grid */}
           <div className="grid grid-cols-2 gap-x-3 sm:gap-x-2 gap-y-6 sm:gap-y-8 mt-6 sm:mt-8">
             {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                className="group p-3 sm:p-3 sm:max-w-md lg:max-w-xl bg-transparent backdrop-blur-xl rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 flex flex-col items-center text-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+              >
+                <div
+                  className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300`}
+                >
+                  {stat.icon}
+                </div>
+                <div className="text-lg sm:text-2xl font-bold text-white mb-1">
+                  {stat.number}
+                </div>
+                <div className="text-xs sm:text-xl text-white">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 gap-x-3 sm:gap-x-2 gap-y-6 sm:gap-y-8 mt-6 sm:mt-8">
+            {stats1.map((stat, index) => (
               <motion.div
                 key={index}
                 className="group p-3 sm:p-3 sm:max-w-md lg:max-w-xl bg-transparent backdrop-blur-xl rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 flex flex-col items-center text-center"
