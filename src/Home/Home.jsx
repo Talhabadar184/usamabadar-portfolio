@@ -55,13 +55,13 @@ function Home() {
     {
       icon: <FaUser />,
       number: "20+",
-      label: "Clients with  deadlines  ",
+      label: "Clients within deadlines  ",
       color: "from-blue-400 to-cyan-500",
     },
     {
       icon: <FaUser />,
       number: "10+",
-      label: "Audits as Team Lead",
+      label: "Assignments as Team Lead",
       color: "from-blue-400 to-cyan-500",
     },
       {
