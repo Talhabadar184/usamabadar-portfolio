@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { FiArrowDown, FiCode, FiZap } from "react-icons/fi";
 // import { FaBrain, FaCogs } from "react-icons/fa";
-import { MdManageAccounts } from "react-icons/md";
+import { MdManageAccounts,MdAssignmentAdd  } from "react-icons/md";
+import { TfiMicrosoftAlt } from "react-icons/tfi";
+import { TbReportSearch } from "react-icons/tb";
+
 import { motion } from "framer-motion";
 import {
-  FaGithub,
-  FaEnvelope,
-  FaDownload,
   FaUser,
-  FaRocket,
   FaBrain,
-  FaCode,
   FaLightbulb,
   FaCogs,
 } from "react-icons/fa";
@@ -59,7 +57,7 @@ function Home() {
       color: "from-blue-400 to-cyan-500",
     },
     {
-      icon: <FaUser />,
+      icon: <MdAssignmentAdd size={18} />,
       number: "10+",
       label: "Assignments as Team Lead",
       color: "from-blue-400 to-cyan-500",
@@ -71,7 +69,7 @@ function Home() {
       color: "from-purple-400 to-pink-500",
     },
     {
-      icon: <FaLightbulb />,
+      icon: <TbReportSearch size={18} />,
       label:
         "Fanancial Reporting, Planning & Analysis ",
       color: "from-orange-400 to-red-500",
@@ -86,7 +84,7 @@ function Home() {
       color: "from-purple-400 to-pink-500",
     },
     {
-      icon: <MdManageAccounts size={18} />,
+      icon: <TfiMicrosoftAlt size={18} />,
       label: "Microsoft  Office, Oracle and Power BI",
       color: "from-emerald-400 to-teal-500",
     },
@@ -125,26 +123,19 @@ function Home() {
       {/* Content */}
       <div className="relative z-30 flex flex-col justify-center h-full px-6 md:px-10 text-white pt-80 md:pt-20">
         {/* Social Icons */}
-        <div className="flex space-x-4 mb-6 text-xl">
-          <a href="https://www.facebook.com/usama.badar.94">
-            <img src={fb} alt="Facebook" className="w-5 h-5 md:w-6 md:h-6" />
-          </a>
-          <a href="https://www.instagram.com/usamabadar.31">
-            <img
-              src={insta}
-              alt="Instagram"
-              className="w-5 h-5 md:w-6 md:h-6"
-            />
-          </a>
-          <a href="https://www.linkedin.com/in/usama-badar">
-            <img
-              src={linkedin}
-              alt="LinkedIn"
-              className="w-5 h-5 md:w-6 md:h-6"
-            />
-          </a>
-          <img src={twitter} alt="Twitter" className="w-5 h-5 md:w-6 md:h-6" />
-        </div>
+<div className="absolute top-4 left-4 flex space-x-3 text-xl md:static md:mb-6">
+  <a href="https://www.facebook.com/usama.badar.94">
+    <img src={fb} alt="Facebook" className="w-5 h-5 md:w-6 md:h-6" />
+  </a>
+  <a href="https://www.instagram.com/usamabadar.31">
+    <img src={insta} alt="Instagram" className="w-5 h-5 md:w-6 md:h-6" />
+  </a>
+  <a href="https://www.linkedin.com/in/usama-badar">
+    <img src={linkedin} alt="LinkedIn" className="w-5 h-5 md:w-6 md:h-6" />
+  </a>
+  <img src={twitter} alt="Twitter" className="w-5 h-5 md:w-6 md:h-6" />
+</div>
+
 
         <h2
           data-aos="fade-up"
@@ -182,7 +173,7 @@ function Home() {
   </p> */}
 
         <a
-          href="/Usama Badar CV.pdf"
+          href="/Usama Badar.pdf"
           print
           className="hover:cursor-pointer mt-6 w-fit bg-blue-700 hover:bg-blue-800 text-white px-5 py-2 md:px-6 md:py-3 rounded-full flex items-center gap-2 shadow-lg animate-fade-up delay-300"
         >
@@ -211,10 +202,10 @@ function Home() {
         </motion.div> */}
 
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 gap-x-3 sm:gap-x-2 gap-y-6 sm:gap-y-8 mt-6 sm:mt-8">
+          <div className="grid grid-cols-2 gap-x-3 sm:gap-x-2 gap-y-6 mb-5 sm:gap-y-5 mt-6 sm:mt-8">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
@@ -239,7 +230,7 @@ function Home() {
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 gap-x-3 sm:gap-x-2 gap-y-6 sm:gap-y-8 mt-6 sm:mt-8">
+          <div className="grid grid-cols-2 gap-x-3 sm:gap-x-2 gap-y-6 sm:gap-y-5 mb-5 mt-6 sm:mt-8">
             {stats1.map((stat, index) => (
               <motion.div
                 key={index}

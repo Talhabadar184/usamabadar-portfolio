@@ -14,7 +14,7 @@ const About = () => {
 
 I have also served as an Internal Auditor, where I was responsible for preparing in-depth Business Process Re-engineering (BPR), Internal audit reports, conducting gap analyses, and offering recommendations to enhance internal controls and align practices with industry standards.          </p>
 <a
-  href="/Usama Badar CV.pdf"
+  href="/Usama Badar.pdf"
   download
   className="mt-4 inline-block px-5 py-2 border border-blue-700 text-blue-700 hover:bg-blue-800 hover:text-white transition rounded"
 >
