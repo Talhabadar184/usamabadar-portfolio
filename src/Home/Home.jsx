@@ -218,7 +218,7 @@ function Home() {
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
-                className="group p-3 sm:p-3 sm:max-w-md lg:max-w-xl bg-transparent backdrop-blur-xl rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 flex flex-col items-center text-center"
+                className="group p-3 sm:p-3 sm:max-w-md lg:max-w-xl bg-transparent rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 flex flex-col items-center text-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
@@ -243,7 +243,7 @@ function Home() {
             {stats1.map((stat, index) => (
               <motion.div
                 key={index}
-                className="group p-3 sm:p-3 sm:max-w-md lg:max-w-xl bg-transparent backdrop-blur-xl rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 flex flex-col items-center text-center"
+                className="group p-3 sm:p-3 sm:max-w-md lg:max-w-xl bg-transparent  rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 flex flex-col items-center text-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
