@@ -121,7 +121,7 @@ function Home() {
       <div className="absolute inset-0 bg-black opacity-50 z-20"></div>
 
       {/* Content */}
-      <div className="relative z-30 flex flex-col justify-center h-full px-6 md:px-10 text-white pt-80 md:pt-20">
+      <div className="relative z-30 flex flex-col justify-center h-full px-6 md:px-10 text-white pt-80 md:pt-5">
         {/* Social Icons */}
 <div className="absolute top-4 left-4 flex space-x-3 text-xl md:static md:mb-6">
   <a href="https://www.facebook.com/usama.badar.94">

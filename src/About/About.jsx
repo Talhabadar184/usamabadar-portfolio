@@ -9,10 +9,11 @@ const About = () => {
         <div>
           <h2 className="text-2xl font-semibold mb-2 border-b-2 border-blue-700 inline-block">Who am I ?</h2>
           <h3 className="mt-4 text-lg font-medium">Chartered Accountant (Finalist)</h3>
-          <p className="mt-2 text-sm text-gray-600">
-          As a CA Finalist and Audit Senior at Nexia International (Riaz Ahmad and Co. Chartered Accountants), I bring over four years of extensive experience in external auditing, specializing in conducting financial audits across various industries in compliance with IFRS and forensic audits. My role involves ensuring the accuracy and integrity of financial statements, while providing critical insights to clients on their financial reporting processes. I have had the opportunity to lead audit teams, where I took on the role of Audit Team Lead, effectively managing my team under pressure and ensuring the successful completion of audit engagements with tight deadlines.
+          <p className="mt-2 text-sm text-gray-600 text-justify">
+  As a CA Finalist and Audit Senior at Nexia International (Riaz Ahmad and Co. Chartered Accountants), I bring over four years of extensive experience in external auditing, specializing in conducting financial audits across various industries in compliance with IFRS and forensic audits. My role involves ensuring the accuracy and integrity of financial statements, while providing critical insights to clients on their financial reporting processes. I have had the opportunity to lead audit teams, where I took on the role of Audit Team Lead, effectively managing my team under pressure and ensuring the successful completion of audit engagements with tight deadlines.
+  I have also served as an Internal Auditor, where I was responsible for preparing in-depth Business Process Re-engineering (BPR), Internal audit reports, conducting gap analyses, and offering recommendations to enhance internal controls and align practices with industry standards.
+</p>
 
-I have also served as an Internal Auditor, where I was responsible for preparing in-depth Business Process Re-engineering (BPR), Internal audit reports, conducting gap analyses, and offering recommendations to enhance internal controls and align practices with industry standards.          </p>
 <a
   href="/Usama Badar.pdf"
   download
