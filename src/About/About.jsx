@@ -17,7 +17,7 @@ const About = () => {
 <a
   href="/Usama Badar.pdf"
   download
-  className="mt-4 inline-block px-5 py-2 border border-blue-700 text-blue-700 hover:bg-blue-800 hover:text-white transition rounded"
+  className="mt-4 inline-block px-5 py-2 border border-blue-700 text-blue-700 transition-all duration-300 hover:text-lg hover:bg-blue-800 hover:text-white  rounded"
 >
   Download My CV
 </a>

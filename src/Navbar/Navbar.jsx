@@ -37,7 +37,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden  md:flex items-center gap-4">
+        <div className="hidden transition-all duration-300 hover:text- md:flex items-center gap-4">
           {menuItemsLeft.map(renderLink)}
         </div>
 
@@ -51,7 +51,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex transition-all duration-300 hover:text-lg items-center gap-4">
           {menuItemsRight.map(renderLink)}
         </div>
       </div>

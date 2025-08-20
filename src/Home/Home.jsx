@@ -85,7 +85,13 @@ function Home() {
     },
     {
       icon: <TfiMicrosoftAlt size={18} />,
-      label: "Microsoft  Office, Oracle and Power BI",
+      label: (
+        <>
+          Microsoft Office,
+          <br />
+          Oracle and Power BI
+        </>
+      ),
       color: "from-emerald-400 to-teal-500",
     },
     {
@@ -175,7 +181,7 @@ function Home() {
         <a
           href="/Usama Badar.pdf"
           print
-          className="hover:cursor-pointer mt-6 w-fit bg-blue-700 hover:bg-blue-800 text-white px-5 py-2 md:px-6 md:py-3 rounded-full flex items-center gap-2 shadow-lg animate-fade-up delay-300"
+          className="hover:cursor-pointer mt-6 transition-all duration-300 hover:text-lg  w-fit bg-blue-700  text-white px-5 py-2 md:px-6 md:py-3 rounded-full flex items-center gap-2 shadow-lg animate-fade-up delay-300"
         >
           Print Resume
         </a>
@@ -204,30 +210,40 @@ function Home() {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 gap-x-3 sm:gap-x-2 gap-y-6 mb-5 sm:gap-y-5 mt-6 sm:mt-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="group p-3 sm:p-3 sm:max-w-md lg:max-w-xl bg-transparent rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 flex flex-col items-center text-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-              >
-                <div
-                  className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  {stat.icon}
-                </div>
-                <div className="text-lg sm:text-2xl font-bold text-white mb-1">
-                  {stat.number}
-                </div>
-                <div className="text-xs sm:text-xl text-white">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+         {/* Stats Grid */}
+<div className="grid grid-cols-2 gap-x-3 sm:gap-x-2 gap-y-6 mb-5 sm:gap-y-5 mt-6 sm:mt-8">
+  {stats.map((stat, index) => (
+    <motion.div
+      key={index}
+      className="group p-3 sm:p-3 sm:max-w-md lg:max-w-xl
+                 bg-transparent rounded-2xl border border-white/10
+                 flex flex-col items-center text-center
+                 transition-transform duration-100 ease-out hover:bg-white/10 hover:border-white/20"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
+      whileHover={{
+        scale: 1.08,          // pops out a bit
+        boxShadow: "0px 10px 25px rgba(0,0,0,0.25)", // shadow depth
+      }}
+    >
+      <div
+        className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br ${stat.color}
+                    flex items-center justify-center mb-2 sm:mb-3
+                    transition-transform duration-100`}
+      >
+        {stat.icon}
+      </div>
+      <div className="text-lg sm:text-2xl font-bold text-white mb-1">
+        {stat.number}
+      </div>
+      <div className="text-xs sm:text-xl text-white">
+        {stat.label}
+      </div>
+    </motion.div>
+  ))}
+</div>
+
 
           {/* Stats Grid */}
           <div className="grid grid-cols-2 gap-x-3 sm:gap-x-2 gap-y-6 sm:gap-y-5 mb-5 mt-6 sm:mt-8">
@@ -237,7 +253,11 @@ function Home() {
                 className="group p-3 sm:p-3 sm:max-w-md lg:max-w-xl bg-transparent  rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 flex flex-col items-center text-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+               transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
+      whileHover={{
+        scale: 1.08,          // pops out a bit
+        boxShadow: "0px 10px 25px rgba(0,0,0,0.25)", // shadow depth
+      }}
               >
                 <div
                   className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300`}
