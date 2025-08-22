@@ -18,6 +18,11 @@ import services_foot from "../assets/Clients/services_foot.svg";
 import Maple from "../assets/Clients/Maple.svg";
 import adam from "../assets/Clients/adam.svg";
 import docs from "../assets/Clients/docs.svg";
+import { motion } from "framer-motion";
+import  { useState } from "react";
+
+
+
 
 const projects = [
   {
@@ -33,6 +38,7 @@ const projects = [
       •	Collaborated with internal and external legal counsel to assess the likelihood and financial impact of ongoing litigations and regulatory matters.  \n
       •	Prepared the audit report and management letter, summarizing key issues, control observations, and value-adding recommendations. \n
       ` ,
+    category: "MERN-Stack",
     link: "https://serviceglobalfootwear.com/",
   },
   {
@@ -282,13 +288,51 @@ const projects = [
     link: "https://nizamgroup.com/",
   },
 ];
+const categories = ["All", "External Audit", "Internal Audit", "Cost Audit ", "Forensic Audit ", "Business Process Reengineering (BPR)","Liquidation / Agreed Upon Procedures"];
+
+
+const getCategoryColor = (category) => {
+  switch (category) {
+    case "External Audit": return "from-blue-400 to-cyan-500";
+    case "Internal Audit": return "from-purple-400 to-pink-500" ;
+    case "Cost Audit": return "from-emerald-400 to-teal-500";
+    case "Forensic Audit": return "from-yellow-400 to-orange-500";
+    case "Business Process Reengineering (BPR)": return "from-red-400 to-pink-500";
+    case "Liquidation / Agreed Upon Procedures": return "from-gray-400 to-gray-600";
+    default: return "from-gray-400 to-gray-600";
+  }
+};
+  
 
 function Clients() {
+    const [selectedCategory, setSelectedCategory] = useState("All");
+
   return (
     <section id="portfolio" className="py-12 text-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="mb-12">
           <h1 className="text-3xl font-bold text-blue-700">Key Clientele <span className="text-gray-800">- Nexia International</span> </h1>
+        </div>
+        {/* Category Filter */}
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
+          {categories.map((category, index) => (
+            <motion.button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ${
+                selectedCategory === category
+                  ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25"
+                  : "bg-white/10 backdrop-blur-sm border border-white/20 text-black hover:bg-white/20 hover:border-white/30"
+              }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              {category}
+            </motion.button>
+          ))}
         </div>
         <div className="grid grid-cols-1 max-w-6xl mt-5 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -310,7 +354,11 @@ function Clients() {
                     {line}
                   </p>
                 ))}
-                 <a
+                <div className="flex justify-between">
+                  <span className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getCategoryColor(project.category)} text-white`}>
+                    {project.category}
+                  </span>
+                   <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -318,6 +366,8 @@ function Clients() {
               >
                 View
               </a> 
+                </div>
+                
               </div>
             </div>
           ))}

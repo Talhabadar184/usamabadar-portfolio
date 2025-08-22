@@ -4,22 +4,16 @@ import { FiArrowDown, FiCode, FiZap } from "react-icons/fi";
 import { MdManageAccounts,MdAssignmentAdd  } from "react-icons/md";
 import { TfiMicrosoftAlt } from "react-icons/tfi";
 import { TbReportSearch } from "react-icons/tb";
-
+import { Link } from "react-scroll"; // ✅ import Link
 import { motion } from "framer-motion";
-import {
-  FaUser,
-  FaBrain,
-  FaLightbulb,
-  FaCogs,
-} from "react-icons/fa";
-import { FiUser, FiAward, FiTarget, FiTrendingUp } from "react-icons/fi";
-
+import {FaUser,FaBrain,FaLightbulb,FaCogs,} from "react-icons/fa";
+// import { FiUser, FiAward, FiTarget, FiTrendingUp } from "react-icons/fi";
 import fb from "../assets/Home/fb.png";
 import insta from "../assets/Home/insta.png";
 import linkedin from "../assets/Home/linke.png";
 import twitter from "../assets/Home/twitter.png";
 import mainBg from "../assets/Home/main7.jpg";
-import ParticlesBg from "../Home/particlesbg";
+// import ParticlesBg from "../Home/particlesbg";
 
 function Home() {
   const [showFirstText, setShowFirstText] = useState(true);
@@ -55,24 +49,28 @@ function Home() {
       number: "20+",
       label: "Clients within deadlines  ",
       color: "from-blue-400 to-cyan-500",
+      target: "clients",
     },
     {
       icon: <MdAssignmentAdd size={18} />,
       number: "10+",
       label: "Assignments as Team Lead",
       color: "from-blue-400 to-cyan-500",
+      target: "resume",
     },
       {
       icon: <FaBrain />,
       // number: "4",
       label: "Financial Statements Preparation & IFRS Expertise",
       color: "from-purple-400 to-pink-500",
+      target: "resume",
     },
     {
       icon: <TbReportSearch size={18} />,
       label:
         "Fanancial Reporting, Planning & Analysis ",
       color: "from-orange-400 to-red-500",
+      target: "resume",
     },
     
   ];
@@ -82,6 +80,7 @@ function Home() {
       number: "4",
       label: "Years Experience",
       color: "from-purple-400 to-pink-500",
+      target: "resume",
     },
     {
       icon: <TfiMicrosoftAlt size={18} />,
@@ -93,17 +92,20 @@ function Home() {
         </>
       ),
       color: "from-emerald-400 to-teal-500",
+      target: "certificates",
     },
     {
       icon: <MdManageAccounts size={18} />,
       label: "External & Internal Audits Forensic & Cost Audits",
       color: "from-emerald-400 to-teal-500",
+      target: "resume",
     },
     {
       icon: <FaLightbulb />,
       label:
         "Audit Strategy & Internal Controls Evaluation",
       color: "from-orange-400 to-red-500",
+      target: "resume",
     },
     
   ];
@@ -210,69 +212,87 @@ function Home() {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
 
-         {/* Stats Grid */}
-<div className="grid grid-cols-2 gap-x-3 sm:gap-x-2 gap-y-6 mb-5 sm:gap-y-5 mt-6 sm:mt-8">
-  {stats.map((stat, index) => (
-    <motion.div
-      key={index}
-      className="group p-3 sm:p-3 sm:max-w-md lg:max-w-xl
-                 bg-transparent rounded-2xl border border-white/10
-                 flex flex-col items-center text-center
-                 transition-transform duration-100 ease-out hover:bg-white/10 hover:border-white/20"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
-      whileHover={{
-        scale: 1.08,          // pops out a bit
-        boxShadow: "0px 10px 25px rgba(0,0,0,0.25)", // shadow depth
-      }}
-    >
-      <div
-        className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br ${stat.color}
-                    flex items-center justify-center mb-2 sm:mb-3
-                    transition-transform duration-100`}
-      >
-        {stat.icon}
-      </div>
-      <div className="text-lg sm:text-2xl font-bold text-white mb-1">
-        {stat.number}
-      </div>
-      <div className="text-xs sm:text-xl text-white">
-        {stat.label}
-      </div>
-    </motion.div>
-  ))}
-</div>
-
-
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 gap-x-3 sm:gap-x-2 gap-y-6 sm:gap-y-5 mb-5 mt-6 sm:mt-8">
-            {stats1.map((stat, index) => (
+      {/* Stats Grid */}
+        <div className="grid grid-cols-2 gap-x-3 sm:gap-x-2 gap-y-6 mb-5 sm:gap-y-5 mt-6 sm:mt-8">
+          {stats.map((stat, index) => (
+            <Link
+              key={index}
+              to={stat.target}
+              smooth={true}
+              duration={600}
+              offset={-80} // adjust for Navbar height
+            >
               <motion.div
-                key={index}
-                className="group p-3 sm:p-3 sm:max-w-md lg:max-w-xl bg-transparent  rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 flex flex-col items-center text-center"
+                className="cursor-pointer group p-3 sm:p-3 sm:max-w-md lg:max-w-xl
+                          bg-transparent rounded-2xl border border-white/10
+                          flex flex-col items-center text-center
+                          transition-transform duration-100 ease-out hover:bg-white/10 hover:border-white/20"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-               transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
-      whileHover={{
-        scale: 1.08,          // pops out a bit
-        boxShadow: "0px 10px 25px rgba(0,0,0,0.25)", // shadow depth
-      }}
+                transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
+                whileHover={{
+                  scale: 1.08,
+                  boxShadow: "0px 10px 25px rgba(0,0,0,0.25)",
+                }}
               >
                 <div
-                  className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300`}
+                  className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br ${stat.color}
+                              flex items-center justify-center mb-2 sm:mb-3 transition-transform duration-100`}
                 >
                   {stat.icon}
                 </div>
-                <div className="text-lg sm:text-2xl font-bold text-white mb-1">
-                  {stat.number}
-                </div>
-                <div className="text-xs sm:text-xl text-white">
-                  {stat.label}
-                </div>
+                {stat.number && (
+                  <div className="text-lg sm:text-2xl font-bold text-white mb-1">
+                    {stat.number}
+                  </div>
+                )}
+                <div className="text-xs sm:text-xl text-white">{stat.label}</div>
               </motion.div>
-            ))}
-          </div>
+            </Link>
+          ))}
+        </div>
+
+
+
+          {/* Stats1 Grid */}
+        <div className="grid grid-cols-2 gap-x-3 sm:gap-x-2 gap-y-6 sm:gap-y-5 mb-5 mt-6 sm:mt-8">
+          {stats1.map((stat, index) => (
+            <Link
+              key={index}
+              to={stat.target}
+              smooth={true}
+              duration={600}
+              offset={-80}
+            >
+              <motion.div
+                className="cursor-pointer group p-3 sm:p-3 sm:max-w-md lg:max-w-xl
+                          bg-transparent rounded-2xl border border-white/10
+                          flex flex-col items-center text-center
+                          transition-transform duration-100 ease-out hover:bg-white/10 hover:border-white/20"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
+                whileHover={{
+                  scale: 1.08,
+                  boxShadow: "0px 10px 25px rgba(0,0,0,0.25)",
+                }}
+              >
+                <div
+                  className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br ${stat.color}
+                              flex items-center justify-center mb-2 sm:mb-3 transition-transform duration-100`}
+                >
+                  {stat.icon}
+                </div>
+                {stat.number && (
+                  <div className="text-lg sm:text-2xl font-bold text-white mb-1">
+                    {stat.number}
+                  </div>
+                )}
+                <div className="text-xs sm:text-xl text-white">{stat.label}</div>
+              </motion.div>
+            </Link>
+          ))}
+        </div>
       </div>
       </div>
     </div>
