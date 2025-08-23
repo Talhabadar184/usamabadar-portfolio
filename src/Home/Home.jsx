@@ -56,21 +56,21 @@ function Home() {
       number: "10+",
       label: "Assignments as Team Lead",
       color: "from-blue-400 to-cyan-500",
-      target: "resume",
+      target: "clients",
     },
       {
       icon: <FaBrain />,
       // number: "4",
       label: "Financial Statements Preparation & IFRS Expertise",
       color: "from-purple-400 to-pink-500",
-      target: "resume",
+      target: "clients",
     },
     {
       icon: <TbReportSearch size={18} />,
       label:
         "Fanancial Reporting, Planning & Analysis ",
       color: "from-orange-400 to-red-500",
-      target: "resume",
+      target: "clients",
     },
     
   ];
@@ -98,14 +98,14 @@ function Home() {
       icon: <MdManageAccounts size={18} />,
       label: "External & Internal Audits Forensic & Cost Audits",
       color: "from-emerald-400 to-teal-500",
-      target: "resume",
+      target: "clients",
     },
     {
       icon: <FaLightbulb />,
       label:
         "Audit Strategy & Internal Controls Evaluation",
       color: "from-orange-400 to-red-500",
-      target: "resume",
+      target: "clients",
     },
     
   ];
