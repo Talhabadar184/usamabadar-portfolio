@@ -19,10 +19,11 @@ import Maple from "../assets/Clients/Maple.svg";
 import adam from "../assets/Clients/adam.svg";
 import docs from "../assets/Clients/docs.svg";
 import { motion } from "framer-motion";
-import  { useState } from "react";
+import  { useState,useEffect } from "react";
 
 
 
+const categories = ["All", "External Audit", "Internal Audit", "Cost Audit","Demerger", "Forensic Audit ", "Business Process Reengineering (BPR)","Liquidation / Agreed Upon Procedures"];
 
 const projects = [
   {
@@ -38,7 +39,7 @@ const projects = [
       •	Collaborated with internal and external legal counsel to assess the likelihood and financial impact of ongoing litigations and regulatory matters.  \n
       •	Prepared the audit report and management letter, summarizing key issues, control observations, and value-adding recommendations. \n
       ` ,
-    category: "MERN-Stack",
+    category: "External Audit",
     link: "https://serviceglobalfootwear.com/",
   },
   {
@@ -52,7 +53,8 @@ const projects = [
       •	Ensured accurate transfer of assets, liabilities, and equity between demerged and resulting entities in accordance with the demerger scheme approved by SECP. \n
       •	Coordinated with legal and finance departments to validate the correctness of balances, ensuring a smooth and compliant transition. \n
       •	Conducted risk assessments and implemented audit procedures tailored to demerger-related complexities, enhancing reliability of financial reporting. \n`,
-    link: "https://servisgroup.com/",
+    category: ["External Audit","Demerger"],
+      link: "https://servisgroup.com/",
   },
   {
     title: "Service Tyres (Private) Limited",
@@ -65,6 +67,7 @@ const projects = [
       •	Ensured full regulatory compliance with SECP requirements for newly incorporated entities resulting from corporate restructuring. \n
       •	Collaborated with cross-functional teams to reconcile intercompany balances and disclosures, ensuring completeness and accuracy. \n
       •	Played a key role in establishing initial financial reporting frameworks and control procedures for the new entity. \n`,
+    category: ["External Audit","Demerger"],
     link: "https://www.servistyres.com/",
   },
   {
@@ -78,8 +81,8 @@ const projects = [
       •	Verified alignment of financial records with demerger documents and facilitated compliance with SECP regulations for newly formed entities. \n
       •	Coordinated with the finance, legal, and audit teams to resolve demerger-related complexities and establish robust initial reporting controls. \n
       •	Ensured timely and accurate disclosures of related party transactions and transitional adjustments, enhancing financial statement transparency and audit quality. \n`,
-    link:
-      "https://servis.pk/",
+    category: ["External Audit","Demerger"],
+    link: "https://servis.pk/",
   },
   {
     title: "Stylers International Limited ",
@@ -95,6 +98,7 @@ const projects = [
       •	Tested the internal controls around procurement, payment cycles, and three-way matching to identify potential control deficiencies. \n
       •	Ensured accurate classification and presentation of trade and other payables, advances from customers, and other liabilities in accordance with IFRS. \n
       •	Prepared and reviewed relevant sections of the financial statements, including the Statement of Financial Position and related note disclosures. \n`,
+    category: "External Audit",
     link: "https://www.stylersintl.com/",
   },
   {
@@ -117,7 +121,8 @@ const projects = [
 •	Confirmed financing balances with banks, ensured accurate presentation of current and non-current portions, and reviewed security and charge documentation. \n
 •	Assessed the accounting treatment of finance costs under IFRS and ensured accurate disclosure of related party transactions, if any, under IAS 24. \n
 •	Drafted the audit report and management letter, highlighting significant audit findings and recommending improvements where needed. \n`,
-    link: "https://www.nishat.net/",
+    category: "External Audit",
+link: "https://www.nishat.net/",
   },
   {
     title: "At Tahur Limited",
@@ -134,7 +139,8 @@ const projects = [
       •	Performed audit procedures on trade receivables, including aging analysis and subsequent receipts testing for recoverability. \n
       •	Assessed credit risk exposure, ensured adequacy of expected credit loss (ECL) provisioning, and verified compliance with company credit policy. \n
       `,
-    link: "https://www.at-tahur.com/",
+    category: "External Audit",
+      link: "https://www.at-tahur.com/",
   },
   {
     title: "Maple Leaf Capital Limited",
@@ -149,6 +155,7 @@ const projects = [
       •	Performed existence and ownership testing of investments through third-party confirmations and broker statements. \n
       •	Ensured compliance with regulatory guidelines issued by SECP for asset management companies and adherence to internal investment policies. \n
       •	Assessed adequacy of disclosures related to financial instruments, risk management, and fair value hierarchy in the financial statements. \n`,
+    category: "External Audit",
     link: "https://www.mapleleafcapital.org/",
   },
   {
@@ -164,7 +171,8 @@ const projects = [
       •	Ensured compliance with SECP insurance regulations and applicable accounting standards (e.g., IFRS 4 / IFRS 17 awareness). \n
       •	Identified gaps in control environment and provided recommendations to enhance audit readiness and reporting quality. \n`,
 
-    link: "https://www.adamjeeinsurance.com/",
+    category: "External Audit",
+      link: "https://www.adamjeeinsurance.com/",
   },
   {
     title: "Sefam (Private) Limited",
@@ -183,6 +191,8 @@ const projects = [
       •	Ensured timely delivery of all milestones within project scope, while maintaining high standards of documentation and client communication. \n
 
 `,
+    category: "Business Process Reengineering (BPR)",
+
     link: "https://sefam.com/",
   },
   {
@@ -198,6 +208,8 @@ const projects = [
       •	Coordinated with the external audit team of Jomo Technologies and represented the management’s side to facilitate timely finalisation of audited financial statements. \n
       •	Ensured accurate and compliant financial closure by aligning liquidation steps with applicable legal and financial reporting frameworks. \n
       `,
+          category: "Liquidation / Agreed Upon Procedures",
+
     link: "https://pitchbook.com/profiles/company/500577-22",
   },
   {
@@ -212,7 +224,9 @@ const projects = [
       •	Delivered targeted recommendations for strengthening internal controls, enhancing transparency, and improving compliance with institutional policies. \n
       •	Conducted a comprehensive HR audit, revealing unethical practices and internal control lapses related to recruitment, payroll, and attendance records. \n
       •	Drafted and presented forensic audit reports to senior management, contributing to strategic decisions on disciplinary actions and internal restructuring. \n`,
-    link: "https://thecityschool.edu.pk/",
+        category: "Forensic Audit",
+
+      link: "https://thecityschool.edu.pk/",
   },
   {
     title: "Sindh Bank Limited",
@@ -244,6 +258,8 @@ const projects = [
     •	Identified policy gaps and inconsistencies in the issuance and tracking of IT equipment provided to employees, exposing risks of misuse and accountability issues. \n
     •	Proposed structured policy improvements and controls for asset management, enhancing operational efficiency and record accuracy. \n
     `,
+    category: "Internal Audit",
+    
     link: "https://docsmedicalbilling.com/",
   },
   {
@@ -258,7 +274,9 @@ const projects = [
       •	Improved alignment between procurement, stores, and accounts departments, ensuring real-time updates and accurate GRN (Goods Receipt Note) generation. \n
       •	Enhanced control environment by recommending procedural changes, tightening roles and responsibilities, and ensuring segregation of duties. \n
       •	Contributed to improved inventory accuracy, reduced discrepancies, and stronger audit trail for material receipts and vendor performance tracking. \n`,
-    link: "https://mastertex.com/",
+        category: ["Internal Audit","Cost Audit"],
+
+      link: "https://mastertex.com/",
   },
 
   {
@@ -273,7 +291,9 @@ const projects = [
       •	Improved alignment between procurement, stores, and accounts departments, ensuring real-time updates and accurate GRN (Goods Receipt Note) generation.\n
       •	Enhanced control environment by recommending procedural changes, tightening roles and responsibilities, and ensuring segregation of duties. \n
       •	Contributed to improved inventory accuracy, reduced discrepancies, and stronger audit trail for material receipts and vendor performance tracking. \n`,
-    link: "https://procon.com.pk/",
+        category: "Internal Audit",
+
+      link: "https://procon.com.pk/",
   },{
     title: "H. Nizam Din & Sons (Private) Limited",
     subtitle: "Internal audit - Procurement",
@@ -285,10 +305,11 @@ const projects = [
       •	Implemented standardized procedures to improve documentation, approval hierarchy, and coordination between procurement, stores, and finance departments. \n
       •	Introduced control measures to ensure physical verification of goods at the time of receipt, improving accuracy and accountability in inventory records. \n
       •	Strengthened the audit trail for procurement transactions and ensured better compliance with internal policies.`,
-    link: "https://nizamgroup.com/",
+        category: ["Internal Audit","Cost Audit"],
+
+      link: "https://nizamgroup.com/",
   },
 ];
-const categories = ["All", "External Audit", "Internal Audit", "Cost Audit ", "Forensic Audit ", "Business Process Reengineering (BPR)","Liquidation / Agreed Upon Procedures"];
 
 
 const getCategoryColor = (category) => {
@@ -305,7 +326,29 @@ const getCategoryColor = (category) => {
   
 
 function Clients() {
+  
     const [selectedCategory, setSelectedCategory] = useState("All");
+  const [isVisible, setIsVisible] = useState(false);
+useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+// const filteredProjects = selectedCategory === "All"
+//   ? projects
+//   : projects.filter(project => project.categories.includes(selectedCategory));
+
+// filtering
+// ✅ Normalize category to always be an array
+const filteredProjects =
+  selectedCategory === "All"
+    ? projects
+    : projects.filter((project) => {
+        const categories = Array.isArray(project.category)
+          ? project.category
+          : [project.category]; // wrap string in array
+        return categories.includes(selectedCategory);
+      });
+
 
   return (
     <section id="portfolio" className="py-12 text-white">
@@ -313,7 +356,28 @@ function Clients() {
         <div className="mb-12">
           <h1 className="text-3xl font-bold text-blue-700">Key Clientele <span className="text-gray-800">- Nexia International</span> </h1>
         </div>
-        {/* Category Filter */}
+        {/* Category Filter
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
+          {categories.map((category, index) => (
+            <motion.button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ${
+                selectedCategory === category
+                  ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25"
+                  : "bg-white/10 backdrop-blur-sm border border-white/20 text-black hover:bg-white/20 hover:border-white/30"
+              }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              {category}
+            </motion.button>
+          ))}
+        </div> */}
+{/* ✅ Category Filter */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
           {categories.map((category, index) => (
             <motion.button
@@ -334,8 +398,9 @@ function Clients() {
             </motion.button>
           ))}
         </div>
-        <div className="grid grid-cols-1 max-w-6xl mt-5 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+
+        {/* <div className="grid grid-cols-1 max-w-6xl mt-5 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project, index) => (
             <div
               key={index}
               className="group bg-white text-black p-6 mt-5 rounded-lg shadow-md transition-all duration-300"
@@ -354,20 +419,83 @@ function Clients() {
                     {line}
                   </p>
                 ))}
-                <div className="flex justify-between">
-                  <span className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getCategoryColor(project.category)} text-white`}>
-                    {project.category}
-                  </span>
-                   <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className=" inline-block bg-black text-white py-2 px-4 rounded border border-blue-500 hover:bg-blue-500 transition"
-              >
-                View
-              </a> 
-                </div>
+               <div className="flex flex-col items-center">
+  <div className="flex justify-between space-x-4">
+    <span
+      className={`px-3 py-1 flex items-center justify-center rounded-full text-xs font-medium 
+                  bg-gradient-to-r ${getCategoryColor(project.category)} text-white`}
+    >
+      {project.category}
+    </span>
+
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block bg-black text-white py-2 px-4 rounded border border-blue-500 hover:bg-blue-500 transition"
+    >
+      View
+    </a>
+  </div>
+</div>
+
                 
+              </div>
+            </div>
+          ))}
+        </div> */}
+
+        {/* ✅ Projects Grid */}
+        <div className="grid grid-cols-1 max-w-6xl mt-5 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project, index) => (
+            <div
+              key={index}
+              className="group bg-white text-black p-6 mt-5 rounded-lg shadow-md transition-all duration-300"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-96 h-52 object-fill rounded-t-lg"
+              />
+              <h2 className="text-1xl font-bold mt-4">{project.title}</h2>
+              <h2 className="text-1xl font-bold mt-4">{project.subtitle}</h2>
+
+              {/* ✅ Expandable description */}
+              <div className="mt-2 overflow-hidden max-h-16 group-hover:max-h-[1050px] transition-all duration-500 ease-in-out">
+                {project.description.split("\n").map((line, i) => (
+                  <p key={i} className="text-sm leading-relaxed">
+                    {line}
+                  </p>
+                ))}
+
+                {/* ✅ Show multiple categories */}
+                <div className="flex flex-col items-center mt-3">
+                  <div className="flex flex-wrap justify-center gap-2 mt-3">
+  {(Array.isArray(project.category) ? project.category : [project.category]).map(
+    (cat, i) => (
+      <span
+        key={i}
+        className={`px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getCategoryColor(
+          cat
+        )} text-white`}
+      >
+        {cat}
+      </span>
+    )
+  )}
+</div>
+
+
+                  {/* View button */}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-block bg-black text-white py-2 px-4 rounded border border-blue-500 hover:bg-blue-500 transition"
+                  >
+                    View
+                  </a>
+                </div>
               </div>
             </div>
           ))}
