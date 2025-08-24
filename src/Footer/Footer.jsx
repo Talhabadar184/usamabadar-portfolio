@@ -67,7 +67,7 @@ function Footer() {
             onChange={handleChange}
           />
           <input
-            className="w-full px-4 py-2 bg-gray-800 text-white border-none outline-none focus:ring-2 focus:ring-pink-500 rounded"
+            className="w-full px-4 py-2 bg-gray-800 text-white border-none outline-none focus:ring-2 focus:ring-blue-500 rounded"
             type="text"
             name="subject"
             placeholder="Subject"
@@ -76,7 +76,7 @@ function Footer() {
             onChange={handleChange}
           />
           <textarea
-            className="w-full h-32 px-4 py-2 bg-gray-800 text-white border-none outline-none focus:ring-2 focus:ring-pink-500 rounded"
+            className="w-full h-32 px-4 py-2 bg-gray-800 text-white border-none outline-none focus:ring-2 focus:ring-blue-500 rounded"
             name="message"
             placeholder="Message"
             required
