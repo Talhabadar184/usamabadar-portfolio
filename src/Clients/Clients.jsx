@@ -23,7 +23,7 @@ import  { useState,useEffect } from "react";
 
 
 
-const categories = ["All", "External Audit", "Internal Audit", "Cost Audit","Demerger", "Forensic Audit", "Business Process Reengineering (BPR)","Liquidation / Agreed Upon Procedures"];
+const categories = ["All", "Internal Audit", "External Audit", "Cost Audit","Demerger", "Forensic Audit", "Business Process Reengineering (BPR)","Liquidation / Agreed Upon Procedures"];
 
 const projects = [
   {
