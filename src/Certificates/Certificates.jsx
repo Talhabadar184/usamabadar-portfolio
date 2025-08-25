@@ -139,7 +139,7 @@ function Certificates() {
 
               <div className="mt-2 overflow-hidden max-h-16 group-hover:max-h-[550px] transition-all duration-500 ease-in-out">
                 {project.description.split('\n').map((line, i) => (
-                  <p key={i} className="text-sm leading-relaxed">
+                  <p key={i} className="text-sm leading-relaxed text-justify">
                     {line}
                   </p>
                 ))}
