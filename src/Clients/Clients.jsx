@@ -189,7 +189,7 @@ link: "https://www.nishat.net/",
       •	Ensured that SOPs and documentation adhered to regulatory compliance standards and were practical for day-to-day implementation. \n
       •	Delivered presentations and conducted walkthroughs with the client’s department heads to train staff on new processes and documentation.  \n
       •	Ensured timely delivery of all milestones within project scope, while maintaining high standards of documentation and client communication. \n
-
+      •	Delivered 25% faster inventory turnover and 13% cost efficiencies across supply chain and store operations.\n
 `,
     category: "Business Process Reengineering (BPR)",
 
@@ -356,27 +356,7 @@ const filteredProjects =
         <div className="mb-12">
           <h1 className="text-3xl font-bold text-blue-700">Key Clientele <span className="text-gray-800">- Nexia International</span> </h1>
         </div>
-        {/* Category Filter
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
-          {categories.map((category, index) => (
-            <motion.button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ${
-                selectedCategory === category
-                  ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25"
-                  : "bg-white/10 backdrop-blur-sm border border-white/20 text-black hover:bg-white/20 hover:border-white/30"
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              {category}
-            </motion.button>
-          ))}
-        </div> */}
+        
 {/* ✅ Category Filter */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
           {categories.map((category, index) => (
@@ -399,51 +379,7 @@ const filteredProjects =
           ))}
         </div>
 
-        {/* <div className="grid grid-cols-1 max-w-6xl mt-5 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <div
-              key={index}
-              className="group bg-white text-black p-6 mt-5 rounded-lg shadow-md transition-all duration-300"
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-96 h-52 object-fill rounded-t-lg"
-              />
-              <h2 className="text-1xl font-bold mt-4">{project.title}</h2>
-              <h2 className="text-1xl font-bold  mt-4">{project.subtitle}</h2>
-             
-              <div className="mt-2 overflow-hidden max-h-16 group-hover:max-h-[1050px] transition-all duration-500 ease-in-out">
-                {project.description.split('\n').map((line, i) => (
-                  <p key={i} className="text-sm leading-relaxed">
-                    {line}
-                  </p>
-                ))}
-               <div className="flex flex-col items-center">
-  <div className="flex justify-between space-x-4">
-    <span
-      className={`px-3 py-1 flex items-center justify-center rounded-full text-xs font-medium 
-                  bg-gradient-to-r ${getCategoryColor(project.category)} text-white`}
-    >
-      {project.category}
-    </span>
 
-    <a
-      href={project.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-block bg-black text-white py-2 px-4 rounded border border-blue-500 hover:bg-blue-500 transition"
-    >
-      View
-    </a>
-  </div>
-</div>
-
-                
-              </div>
-            </div>
-          ))}
-        </div> */}
 
         {/* ✅ Projects Grid */}
         <div className="grid grid-cols-1 max-w-6xl mt-5 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -461,9 +397,9 @@ const filteredProjects =
               <h2 className="text-1xl font-bold mt-4">{project.subtitle}</h2>
 
               {/* ✅ Expandable description */}
-              <div className="mt-2 overflow-hidden max-h-16 group-hover:max-h-[1050px] transition-all duration-500 ease-in-out">
+              <div className="mt-2 overflow-hidden max-h-16 group-hover:max-h-[1150px] transition-all duration-500 ease-in-out">
                 {project.description.split("\n").map((line, i) => (
-                  <p key={i} className="text-sm leading-relaxed">
+                  <p key={i} className="text-sm leading-relaxed text-justify">
                     {line}
                   </p>
                 ))}
