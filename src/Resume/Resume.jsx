@@ -33,7 +33,7 @@ const Resume = () => {
             Experience
           </h3>
           <div>
-            <h4 className="text-blue-700 font-semibold">September 2024 - Present</h4>
+            <h4 className="text-blue-700 font-semibold">April 2024 - Present</h4>
             <p className="font-medium text-blue-700" > Audit Senior - Nexia International
             </p>
             <p className="text-sm text-gray-600 mt-2 text-justify">
@@ -51,7 +51,7 @@ const Resume = () => {
           </div>
 
           <div>
-            <h4 className="text-blue-700 font-semibold">August 2023 - September 2024</h4>
+            <h4 className="text-blue-700 font-semibold">March 2023 - April 2024</h4>
             <p className="font-medium text-blue-700">Senior Audit Associate - Nexia International
             </p>
             <p className="text-sm text-gray-600 mt-2 text-justify">
@@ -65,7 +65,7 @@ const Resume = () => {
           </div>
 
           <div>
-            <h4 className="text-blue-700 font-semibold">January 2022 - August 2023</h4>
+            <h4 className="text-blue-700 font-semibold">January 2022 - March 2023</h4>
             <p className="font-medium text-blue-700">Audit Associate - Nexia International</p>
             <p className="text-sm text-gray-600 mt-2 text-justify">
             • Assisted in performing external audits of clients in various industries under the direct supervision of seniors and managers.

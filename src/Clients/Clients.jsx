@@ -264,16 +264,29 @@ link: "https://www.nishat.net/",
   },
   {
     title: "Masters Textile Mills Limited",
-    subtitle: "Internal Audit and Process Improvement",
+    subtitle: "Internal Audit – Procurement & Inventory",
     image: Master,
     description:
-      `•	Initiated a dedicated receipt room assignment, ensuring that a third-party physically verifies goods entering the premises and records them based on actual quantities received. \n
-      •	Oversaw implementation of a verification mechanism that improved the accuracy of inventory records and strengthened control over inbound materials. \n
-      •	Identified key weaknesses in internal controls within the procurement department, including gaps in documentation, approval hierarchy, and material handling. \n
-      •	Streamlined the entire procurement process — from purchase order creation and approval to receipt and storage of goods — ensuring process transparency and accountability.  \n
-      •	Improved alignment between procurement, stores, and accounts departments, ensuring real-time updates and accurate GRN (Goods Receipt Note) generation. \n
-      •	Enhanced control environment by recommending procedural changes, tightening roles and responsibilities, and ensuring segregation of duties. \n
-      •	Contributed to improved inventory accuracy, reduced discrepancies, and stronger audit trail for material receipts and vendor performance tracking. \n`,
+      `The objective was to strengthen transparency, accountability, and accuracy of goods received and recorded, while also identifying weaknesses in internal control and process efficiency.\n
+
+Key Outcomes:
+• Initiated a dedicated receipt room assignment, ensuring that a third-party physically verifies goods entering the premises and records them based on actual quantities received.\n
+• Identified key weaknesses in internal controls within the procurement department, including gaps in documentation, approval hierarchy, and material handling.\n
+• Streamlined the entire procurement process — from purchase order creation and approval to receipt and storage of goods — ensuring process transparency and accountability.\n
+• Improved alignment between procurement, stores, and accounts departments, ensuring real-time updates and accurate GRN (Goods Receipt Note) generation.\n
+`,
+    subtitle1: "Cost Audit – Procurement & Inventory\n",
+        description1:
+        `The focus was to ensure proper classification of costs, detect inefficiencies in consumption, and provide management with reliable data for cost control and decision-making.\n
+
+        Key Outcomes:
+• Verified accurate recording and allocation of procurement costs (purchase price, freight, duties, etc.) into inventory and cost centers.\n
+• Analyzed material consumption variances between standard and actual usage, identifying inefficiencies and wastage.\n
+• Evaluated GRN postings and store ledgers for correct valuation and timely cost recognition.\n
+• Ensured proper allocation of costs to production departments, in line with Cost Accounting Records Rules (Textiles).\n
+• Enhanced transparency of cost statements, enabling management to make informed pricing and budgeting decisions.\n`,
+
+
         category: ["Internal Audit","Cost Audit"],
 
       link: "https://mastertex.com/",
@@ -294,17 +307,29 @@ link: "https://www.nishat.net/",
         category: "Internal Audit",
 
       link: "https://procon.com.pk/",
-  },{
+  },
+  {
     title: "H. Nizam Din & Sons (Private) Limited",
-    subtitle: "Internal audit - Procurement",
+    subtitle: "Internal Audit – Procurement & Inventory",
     image: HND,
     description:
-      `•	Conducted a review of the procurement cycle, identifying gaps and inefficiencies in purchase order creation, approval, and goods receipt processes. \n
-      •	Streamlined the end-to-end procurement process, from initiation of purchase orders to preparation of Goods Receipt Notes (GRNs) and physical verification of received goods. \n
-      •	Identified significant weaknesses in internal controls, particularly related to unapproved or incomplete purchase orders and inconsistent record-keeping. \n
-      •	Implemented standardized procedures to improve documentation, approval hierarchy, and coordination between procurement, stores, and finance departments. \n
-      •	Introduced control measures to ensure physical verification of goods at the time of receipt, improving accuracy and accountability in inventory records. \n
-      •	Strengthened the audit trail for procurement transactions and ensured better compliance with internal policies.`,
+      `The objective was to strengthen transparency, accountability, and accuracy of goods received and recorded, while also identifying weaknesses in internal control and process efficiency.\n
+
+Key Outcomes:
+• Initiated a dedicated receipt room assignment, ensuring that a third-party physically verifies goods entering the premises and records them based on actual quantities received.\n
+• Identified key weaknesses in internal controls within the procurement department, including gaps in documentation, approval hierarchy, and material handling.\n
+• Streamlined the entire procurement process — from purchase order creation and approval to receipt and storage of goods — ensuring process transparency and accountability.\n
+• Improved alignment between procurement, stores, and accounts departments, ensuring real-time updates and accurate GRN (Goods Receipt Note) generation.\n`,
+subtitle1: "Cost Audit – Procurement & Inventory\n",
+        description1:
+        `The focus was to ensure proper classification of costs, detect inefficiencies in consumption, and provide management with reliable data for cost control and decision-making.\n
+
+        Key Outcomes:
+• Verified accurate recording and allocation of procurement costs (purchase price, freight, duties, etc.) into inventory and cost centers.\n
+• Analyzed material consumption variances between standard and actual usage, identifying inefficiencies and wastage.\n
+• Evaluated GRN postings and store ledgers for correct valuation and timely cost recognition.\n
+• Ensured proper allocation of costs to production departments, in line with Cost Accounting Records Rules (Textiles).\n
+• Enhanced transparency of cost statements, enabling management to make informed pricing and budgeting decisions.\n`,
         category: ["Internal Audit","Cost Audit"],
 
       link: "https://nizamgroup.com/",
@@ -398,11 +423,26 @@ const filteredProjects =
 
               {/* ✅ Expandable description */}
               <div className="mt-2 overflow-hidden max-h-16 group-hover:max-h-[1150px] transition-all duration-500 ease-in-out">
-                {project.description.split("\n").map((line, i) => (
-                  <p key={i} className="text-sm leading-relaxed text-justify">
-                    {line}
-                  </p>
-                ))}
+                 {project.description
+    ? project.description.split("\n").map((line, i) => (
+        <p key={i} className="text-sm leading-relaxed text-justify">
+          {line}
+        </p>
+      ))
+    : null}
+
+  {project.subtitle1 && (
+    <h2 className="text-1xl font-bold mt-4">{project.subtitle1}</h2>
+  )}
+
+  {project.description1
+    ? project.description1.split("\n").map((line, i) => (
+        <p key={i} className="mt-2 text-sm leading-relaxed text-justify">
+          {line}
+        </p>
+      ))
+    : null}
+              {/* <p className="text-sm leading-relaxed text-justify">{project.description1}</p> */}
 
                 {/* ✅ Show multiple categories */}
                 <div className="flex flex-col items-center mt-3">
