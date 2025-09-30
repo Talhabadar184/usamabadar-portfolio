@@ -108,7 +108,9 @@ const projects = [
     description:
       `•	Led the annual and interim statutory audits of Nishat Chunian Limited, a listed company and one of Pakistan’s leading textile exporters, ensuring compliance with International Financial Reporting Standards (IFRS) and local corporate laws. \n
       •	Took complete responsibility for planning, execution, and timely completion of the audit engagement in coordination with the audit manager and client’s senior management. \n
-      •	Prepared the complete set of financial statements, including the Statement of Financial Position, Profit or Loss and Other Comprehensive Income, Statement of Changes in Equity, Statement of Cash Flows, and detailed notes in compliance with IFRS and Companies Act, 2017.
+      •	Prepared complete sets of standalone financial statements, including Statement of Financial Position, Profit or Loss and Other Comprehensive Income, Statement of Changes in Equity, Statement of Cash Flows, and detailed notes in compliance with IFRS and the Companies Act, 2017.
+      \n
+      •	Prepared consolidated financial statements incorporating three foreign subsidiaries, ensuring compliance with IFRS consolidation requirements.
       \n
       •	Performed detailed audit procedures on long-term and short-term financing arrangements, including:  \n
         \t •	Foreign Exchange (FE-25) loans \n
