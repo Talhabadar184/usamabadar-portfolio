@@ -23,7 +23,7 @@ import  { useState,useEffect } from "react";
 
 
 
-const categories = ["All", "Internal Audit", "External Audit", "Cost Audit","Demerger", "Forensic Audit", "Business Process Reengineering (BPR)","Liquidation / Agreed Upon Procedures"];
+const categories = ["All", "Internal Audit", "Statutory Audit", "Cost Audit","Demerger", "Forensic Audit", "Business Process Reengineering (BPR)","Liquidation / Agreed Upon Procedures"];
 
 const projects = [
   {
@@ -39,7 +39,7 @@ const projects = [
       •	Collaborated with internal and external legal counsel to assess the likelihood and financial impact of ongoing litigations and regulatory matters.  \n
       •	Prepared the audit report and management letter, summarizing key issues, control observations, and value-adding recommendations. \n
       ` ,
-    category: "External Audit",
+    category: "Statutory Audit",
     link: "https://serviceglobalfootwear.com/",
   },
   {
@@ -53,7 +53,7 @@ const projects = [
       •	Ensured accurate transfer of assets, liabilities, and equity between demerged and resulting entities in accordance with the demerger scheme approved by SECP. \n
       •	Coordinated with legal and finance departments to validate the correctness of balances, ensuring a smooth and compliant transition. \n
       •	Conducted risk assessments and implemented audit procedures tailored to demerger-related complexities, enhancing reliability of financial reporting. \n`,
-    category: ["External Audit","Demerger"],
+    category: ["Statutory Audit","Demerger"],
       link: "https://servisgroup.com/",
   },
   {
@@ -67,7 +67,7 @@ const projects = [
       •	Ensured full regulatory compliance with SECP requirements for newly incorporated entities resulting from corporate restructuring. \n
       •	Collaborated with cross-functional teams to reconcile intercompany balances and disclosures, ensuring completeness and accuracy. \n
       •	Played a key role in establishing initial financial reporting frameworks and control procedures for the new entity. \n`,
-    category: ["External Audit","Demerger"],
+    category: ["Statutory Audit","Demerger"],
     link: "https://www.servistyres.com/",
   },
   {
@@ -81,7 +81,7 @@ const projects = [
       •	Verified alignment of financial records with demerger documents and facilitated compliance with SECP regulations for newly formed entities. \n
       •	Coordinated with the finance, legal, and audit teams to resolve demerger-related complexities and establish robust initial reporting controls. \n
       •	Ensured timely and accurate disclosures of related party transactions and transitional adjustments, enhancing financial statement transparency and audit quality. \n`,
-    category: ["External Audit","Demerger"],
+    category: ["Statutory Audit","Demerger"],
     link: "https://servis.pk/",
   },
   {
@@ -98,7 +98,7 @@ const projects = [
       •	Tested the internal controls around procurement, payment cycles, and three-way matching to identify potential control deficiencies. \n
       •	Ensured accurate classification and presentation of trade and other payables, advances from customers, and other liabilities in accordance with IFRS. \n
       •	Prepared and reviewed relevant sections of the financial statements, including the Statement of Financial Position and related note disclosures. \n`,
-    category: "External Audit",
+    category: "Statutory Audit",
     link: "https://www.stylersintl.com/",
   },
   {
@@ -123,7 +123,7 @@ const projects = [
 •	Confirmed financing balances with banks, ensured accurate presentation of current and non-current portions, and reviewed security and charge documentation. \n
 •	Assessed the accounting treatment of finance costs under IFRS and ensured accurate disclosure of related party transactions, if any, under IAS 24. \n
 •	Drafted the audit report and management letter, highlighting significant audit findings and recommending improvements where needed. \n`,
-    category: "External Audit",
+    category: "Statutory Audit",
 link: "https://www.nishat.net/",
   },
   {
@@ -141,7 +141,7 @@ link: "https://www.nishat.net/",
       •	Performed audit procedures on trade receivables, including aging analysis and subsequent receipts testing for recoverability. \n
       •	Assessed credit risk exposure, ensured adequacy of expected credit loss (ECL) provisioning, and verified compliance with company credit policy. \n
       `,
-    category: "External Audit",
+    category: "Statutory Audit",
       link: "https://www.at-tahur.com/",
   },
   {
@@ -157,7 +157,7 @@ link: "https://www.nishat.net/",
       •	Performed existence and ownership testing of investments through third-party confirmations and broker statements. \n
       •	Ensured compliance with regulatory guidelines issued by SECP for asset management companies and adherence to internal investment policies. \n
       •	Assessed adequacy of disclosures related to financial instruments, risk management, and fair value hierarchy in the financial statements. \n`,
-    category: "External Audit",
+    category: "Statutory Audit",
     link: "https://www.mapleleafcapital.org/",
   },
   {
@@ -173,7 +173,7 @@ link: "https://www.nishat.net/",
       •	Ensured compliance with SECP insurance regulations and applicable accounting standards (e.g., IFRS 4 / IFRS 17 awareness). \n
       •	Identified gaps in control environment and provided recommendations to enhance audit readiness and reporting quality. \n`,
 
-    category: "External Audit",
+    category: "Statutory Audit",
       link: "https://www.adamjeeinsurance.com/",
   },
   {
@@ -341,7 +341,7 @@ subtitle1: "Cost Audit – Procurement & Inventory\n",
 
 const getCategoryColor = (category) => {
   switch (category) {
-    case "External Audit": return "from-blue-400 to-cyan-500";
+    case "Statutory Audit": return "from-blue-400 to-cyan-500";
     case "Internal Audit": return "from-purple-400 to-pink-500" ;
     case "Cost Audit": return "from-emerald-400 to-teal-500";
     case "Forensic Audit": return "from-yellow-400 to-orange-500";
