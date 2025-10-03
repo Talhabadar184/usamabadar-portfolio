@@ -52,7 +52,7 @@ const Resume = () => {
 
           <div>
             <h4 className="text-blue-700 font-semibold">March 2023 - April 2024</h4>
-            <p className="font-medium text-blue-700">Usama Badar Resume - Nexia International
+            <p className="font-medium text-blue-700">Senior Audit Associate - Nexia International
             </p>
             <p className="text-sm text-gray-600 mt-2 text-justify">
             • Supervised small audit teams during engagements, reviewing the work performed by audit associates and ensuring quality standards were maintained.
