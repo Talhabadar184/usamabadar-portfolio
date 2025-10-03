@@ -15,7 +15,7 @@ const About = () => {
 </p>
 
 <a
-  href="/Usama Badar.pdf"
+  href="/Usama Badar Resume.pdf"
   download
   className="mt-4 inline-block px-5 py-2 border border-blue-700 text-blue-700 transition-all duration-300 hover:text-lg hover:bg-blue-800 hover:text-white  rounded"
 >

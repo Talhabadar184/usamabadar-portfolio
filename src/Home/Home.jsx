@@ -181,7 +181,7 @@ function Home() {
   </p> */}
 
         <a
-          href="/Usama Badar.pdf"
+          href="/Usama Badar Resume.pdf"
           print
           className="hover:cursor-pointer mt-6 transition-all duration-300 hover:text-lg  w-fit bg-blue-700  text-white px-5 py-2 md:px-6 md:py-3 rounded-full flex items-center gap-2 shadow-lg animate-fade-up delay-300"
         >
