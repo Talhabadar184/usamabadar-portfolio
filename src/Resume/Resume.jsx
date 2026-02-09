@@ -33,7 +33,24 @@ const Resume = () => {
             Experience
           </h3>
           <div>
-            <h4 className="text-blue-700 font-semibold">April 2024 - Present</h4>
+            <h4 className="text-blue-700 font-semibold">Dec 2025 - Present</h4>
+            <p className="font-medium text-blue-700" > Audit Supervisor"
+
+            </p>
+            <p className="text-sm text-gray-600 mt-2 text-justify">
+            • Led and supervised statutory audit engagements for large and complex clients, managing planning, risk assessment, materiality, and execution in compliance with ISA and IFRS.
+
+<br />
+• Reviewed financial statements and group consolidations, ensured audit quality standards, and resolved complex accounting issues including IFRS 9, 15, 16 and consolidation requirements.
+<br />
+• Managed and trained audit teams, coordinated with senior client management, and delivered audit findings and internal control recommendations within tight timelines and budgets.
+<br />
+
+            </p>
+            <hr className="my-4" />
+          </div>
+          <div>
+            <h4 className="text-blue-700 font-semibold">April 2024 - Dec 2025</h4>
             <p className="font-medium text-blue-700" > Audit Senior - Nexia International
             </p>
             <p className="text-sm text-gray-600 mt-2 text-justify">
@@ -52,7 +69,7 @@ const Resume = () => {
 
           <div>
             <h4 className="text-blue-700 font-semibold">March 2023 - April 2024</h4>
-            <p className="font-medium text-blue-700">Senior Audit Associate - Nexia International
+            <p className="font-medium text-blue-700">Audit Semi Senior - Nexia International
             </p>
             <p className="text-sm text-gray-600 mt-2 text-justify">
             • Supervised small audit teams during engagements, reviewing the work performed by audit associates and ensuring quality standards were maintained.
@@ -105,11 +122,11 @@ const Resume = () => {
 
 
           <div>
-            <h4 className="text-blue-700 font-semibold"> 2022 -  2025</h4>
+            <h4 className="text-blue-700 font-semibold"> 2022 - Present</h4>
            <p className="font-medium text-blue-700">Certified Finance and Accounting Professional (CFAP), CA Finalist</p>
             <p>Institute of Chartered Accountants of Pakistan</p>
             <p className="text-sm text-gray-600 mt-2 text-justify">
-            CA Finalist (since 2022) with three papers remaining for qualification. Currently completing mandatory articleship at Nexia International.            </p>
+            CA Finalist (since 2022) with two paper remaining for qualification. Currently completing mandatory articleship at Nexia International.            </p>
             <hr className="my-4" />
 
           </div>
