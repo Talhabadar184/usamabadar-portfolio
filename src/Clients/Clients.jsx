@@ -28,7 +28,7 @@ const categories = ["All", "Internal Audit", "Statutory Audit", "Cost Audit","De
 const projects = [
   {
     title: "Service Global Footwear Limited ",
-    subtitle:"Financial Audit - Annual ",
+    subtitle:"Statutory Audit - Annual ",
     image: services_foot,
     description: `
       • Led the annual statutory audit of Service Global Footwear Limited, a public listed company engaged in the manufacturing and export of footwear, ensuring compliance with International Financial Reporting Standards (IFRS) and regulatory guidelines of the Securities and Exchange Commission of Pakistan (SECP). \n
@@ -44,7 +44,7 @@ const projects = [
   },
   {
     title: "Service Industries Limited",
-    subtitle:"Demerger and Financial Audit - Annual ",
+    subtitle:"Demerger and Statutory Audit - Annual ",
     image: services,
     description:
       `•	Led the end-to-end statutory audit of Service Industries Limited, a listed entity in the manufacturing and retail sector \n
@@ -58,7 +58,7 @@ const projects = [
   },
   {
     title: "Service Tyres (Private) Limited",
-    subtitle:"Demerger and Financial Audit - Annual",
+    subtitle:"Demerger and Statutory Audit - Annual",
     image: services_tyres,
     description:
       `•	Managed the first statutory audit of Service Tyres (Private) Limited, a newly incorporated entity post-demerger from Service Industries Limited. \n
@@ -72,7 +72,7 @@ const projects = [
   },
   {
     title: "Service Retail (Private) Limited",
-    subtitle:"Demerger and Financial Audit - Annual",
+    subtitle:"Demerger and Statutory Audit - Annual",
     image: services,
     description:
       `• Led the first statutory audit of Service Retail (Private) Limited, incorporated as a result of the demerger from Service Industries Limited. \n
@@ -86,7 +86,7 @@ const projects = [
   },
   {
     title: "Stylers International Limited ",
-    subtitle:"Financial Audit - Annual",
+    subtitle:"Statutory Audit - Annual",
     image: stylers,
     description:
       `•	Served as Audit Senior on the statutory financial audit of Nishat Chunian Limited for the year ended 2023, a prominent textile manufacturing and export company, ensuring full compliance with International Financial Reporting Standards (IFRS) and local regulatory requirements. \n
@@ -103,7 +103,7 @@ const projects = [
   },
   {
     title: "Nishat Chunian Limited",
-    subtitle:"Financial Audit – Annual and Special",
+    subtitle:"Statutory Audit – Annual and Special",
     image: NC,
     description:
       `•	Led the annual and interim statutory audits of Nishat Chunian Limited, a listed company and one of Pakistan’s leading textile exporters, ensuring compliance with International Financial Reporting Standards (IFRS) and local corporate laws. \n
@@ -128,7 +128,7 @@ link: "https://www.nishat.net/",
   },
   {
     title: "At Tahur Limited",
-    subtitle:"Financial Audit - Interim",
+    subtitle:"Statutory Audit - Interim",
     image: AT,
     description:
       `•	Performed interim audit procedures at At-Tahur Limited, a listed dairy company producing milk, lassi, flavored milk, and other dairy products.  \n
@@ -146,7 +146,7 @@ link: "https://www.nishat.net/",
   },
   {
     title: "Maple Leaf Capital Limited",
-    subtitle: "Financial Audit – Annual",
+    subtitle: "Statutory Audit – Annual",
     image: Maple,
     description:
       `•	Prepared the complete set of financial statements, including notes to the accounts, in accordance with IFRS and relevant regulatory requirements applicable to NBFCs (Non-Banking Finance Companies). \n
@@ -162,7 +162,7 @@ link: "https://www.nishat.net/",
   },
   {
     title: "Adamjee Insurance Company Limited ",
-    subtitle: "Financial Audit – Interim",
+    subtitle: "Statutory Audit – Interim",
     image: adam,
     description:
       `•	Acted as Audit Senior during a special audit engagement focused on understanding the entity’s operations and financial reporting framework. \n
