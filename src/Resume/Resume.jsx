@@ -220,29 +220,29 @@
 // export default Resume;
 import React from "react";
 
-const skills = [
-  { name: "International Financial Reporting Standards", level: "95%" },
-  { name: "Financial Statements Preparation", level: "90%" },
-  { name: "Financial Modeling and Forecasting", level: "90%" },
-  { name: "Due Diligence and Business Insights", level: "90%" },
-  { name: "Financial Auditing and Assurance (IFRS)", level: "90%" },
-  { name: "Audit Strategy and Development", level: "90%" },
-  { name: "Regulatory Compliance and Reporting", level: "90%" },
-  { name: "Journal Entries", level: "90%" },
-  { name: "Data Analytics and Management", level: "90%" },
-  { name: "Microsoft Power BI", level: "90%" },
-  { name: "Oracle", level: "90%" },
-  { name: "Team Leadership & Training", level: "90%" },
-  { name: "Effective Communication", level: "90%" },
-  { name: "Report Writing and Presentation Skills", level: "85%" },
-  { name: "Presentation Skills", level: "85%" },
-  { name: "Professional Ethics", level: "85%" },
-];
+// const skills = [
+//   { name: "International Financial Reporting Standards", level: "95%" },
+//   { name: "Financial Statements Preparation", level: "90%" },
+//   { name: "Financial Modeling and Forecasting", level: "90%" },
+//   { name: "Due Diligence and Business Insights", level: "90%" },
+//   { name: "Financial Auditing and Assurance (IFRS)", level: "90%" },
+//   { name: "Audit Strategy and Development", level: "90%" },
+//   { name: "Regulatory Compliance and Reporting", level: "90%" },
+//   { name: "Journal Entries", level: "90%" },
+//   { name: "Data Analytics and Management", level: "90%" },
+//   { name: "Microsoft Power BI", level: "90%" },
+//   { name: "Oracle", level: "90%" },
+//   { name: "Team Leadership & Training", level: "90%" },
+//   { name: "Effective Communication", level: "90%" },
+//   { name: "Report Writing and Presentation Skills", level: "85%" },
+//   { name: "Presentation Skills", level: "85%" },
+//   { name: "Professional Ethics", level: "85%" },
+// ];
 
 const experience = [
   {
     date: "Dec 2025 – Present",
-    role: "Audit Supervisor",
+    role: "Audit Supervisor-Nexia International",
     points: [
       "Led and supervised multiple statutory audit engagements for large and complex clients across manufacturing, retail, insurance, banking, textile, oil & gas, and services sectors.",
       "Planned engagements end-to-end including scoping, resource allocation, risk assessment, materiality determination, and audit strategy development using a risk-based approach.",
@@ -255,7 +255,7 @@ const experience = [
   },
   {
     date: "Apr 2024 – Dec 2025",
-    role: "Audit Senior – Nexia International",
+    role: "Audit Senior-Nexia International",
     points: [
       "Took overall responsibility for planning, execution, and completion of audit engagements for large and complex clients.",
       "Prepared and reviewed complete sets of financial statements, including notes to the accounts, in accordance with IFRS and local regulatory requirements.",
@@ -316,10 +316,10 @@ const experience = [
 ];
 
 const education = [
-  { date: "2022 – Present", role: "CFAP – CA Finalist", desc: "Institute of Chartered Accountants of Pakistan. CA Finalist with two papers remaining. Currently completing mandatory articleship at Nexia International." },
-  { date: "2019 – 2021", role: "CAF – CA Intermediate", desc: "Institute of Chartered Accountants of Pakistan. Completed Certificate in Accounting and Finance in 2.5 years and commenced CA Articleship at Nexia International." },
-  { date: "2019 – Ongoing", role: "ACCA (Part Qualified)", desc: "Association of Certified Chartered Accountants. Granted exemption from 8 papers based on CA Pakistan qualifications." },
-  { date: "2019", role: "AFC – CA Foundation", desc: "Institute of Chartered Accountants of Pakistan. Completed Assessment of Fundamental Competencies in 6 months." },
+  { date: "2019 – Present", role: "CA  - ICAP (Part Qualified / Finalist)", desc: "CA Finalist at Institute of Chartered Accountants of Pakistan (ICAP) with 2 papers remaining." },
+  // { date: "2019 – 2021", role: "CAF – CA Intermediate", desc: "Institute of Chartered Accountants of Pakistan. Completed Certificate in Accounting and Finance in 2.5 years and commenced CA Articleship at Nexia International." },
+  { date: "2019 – Ongoing", role: "ACCA (Part Qualified / Finalist)", desc: "Association of Certified Chartered Accountants. Granted exemption from 8 papers based on CA Pakistan qualifications." },
+  { date: "(BSAF - 2026)", role: "Bachelor of Science in Accounting & Finance", desc: "Completing my bachelor's degree in Accounting & Finance from Lahore Leads University, Pakistan." },
   { date: "2017 – 2018", role: "Senior High School (Grade 11–12)", desc: "Punjab Board of Intermediate and Secondary Education. Achieved 78% in board examinations while actively participating in table tennis and football." },
   { date: "2015 – 2016", role: "High School (Grade 9–10)", desc: "Punjab Board of Intermediate and Secondary Education. Ranked top 3 in class throughout schooling, achieving 85% in board examinations." },
 ];
@@ -327,8 +327,9 @@ const education = [
 const Entry = ({ date, role, children, isLast }) => (
   <div className={`grid grid-cols-1 sm:grid-cols-[190px_1fr] gap-1 sm:gap-6 py-4 sm:py-5 ${!isLast ? "border-b border-gray-200" : ""}`}>
     <div>
+          <p className="text-blue-700 text-sm font-medium mt-0.5">{role}</p>
+
       <p className="text-blue-700 text-sm font-medium">{date}</p>
-      <p className="text-blue-700 text-sm font-medium mt-0.5">{role}</p>
     </div>
     <div className="text-sm text-gray-600 leading-relaxed mt-1 sm:mt-0">{children}</div>
   </div>
@@ -359,13 +360,13 @@ const Resume = () => (
 
     <SectionBlock title="Education">
       {education.map((e, i) => (
-        <Entry key={i} date={e.date} role={e.role} isLast={i === education.length - 1}>
+        <Entry key={i} role={e.role} date={e.date} isLast={i === education.length - 1}>
           <p>{e.desc}</p>
         </Entry>
       ))}
     </SectionBlock>
 
-    <SectionBlock title="Skills & Expertise">
+    {/* <SectionBlock title="Skills & Expertise">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-x-12">
         {skills.map((skill, i) => (
           <div key={i}>
@@ -376,7 +377,7 @@ const Resume = () => (
           </div>
         ))}
       </div>
-    </SectionBlock>
+    </SectionBlock> */}
   </div>
 );
 
