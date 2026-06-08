@@ -189,7 +189,7 @@ function Home() {
           animate="visible"
           custom={4}
         >
-          Senior Auditor — Capital Plus Auditing of Accounts (CPA)
+          SENUOR AUDITOR — CAPITAL PLUS AUDITING OF ACCOUNTS (CPA)
         </motion.p>
 
         {/* Download Resume */}
