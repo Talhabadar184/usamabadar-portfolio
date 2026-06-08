@@ -1,484 +1,557 @@
-import React from "react";
-import services from "../assets/Clients/services.svg"
-import services_tyres from "../assets/Clients/services_tyre.svg"
-import sefam from "../assets/Clients/sefam.svg"
-import Jomo from "../assets/Clients/jomo.svg"
-import city from "../assets/Clients/city.svg"
-import AT from "../assets/Clients/AT.svg"
-import AKI from "../assets/Clients/AKI.svg"
-import procon from "../assets/Clients/procon.svg"
-import SG from "../assets/Clients/SG.svg"
-import Sindh from "../assets/Clients/sindh.svg"
-import Gray from "../assets/Clients/gray.svg"
-import stylers from "../assets/Clients/stylers.svg"
-import NC from "../assets/Clients/NC.svg" 
-import Master from "../assets/Clients/Master.svg"
-import HND from "../assets/Clients/HND.svg"
+import React, { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import services from "../assets/Clients/services.svg";
+import services_tyres from "../assets/Clients/services_tyre.svg";
+import sefam from "../assets/Clients/sefam.svg";
+import Jomo from "../assets/Clients/jomo.svg";
+import city from "../assets/Clients/city.svg";
+import AT from "../assets/Clients/AT.svg";
+import AKI from "../assets/Clients/AKI.svg";
+import procon from "../assets/Clients/procon.svg";
+import SG from "../assets/Clients/SG.svg";
+import Sindh from "../assets/Clients/sindh.svg";
+import Gray from "../assets/Clients/gray.svg";
+import stylers from "../assets/Clients/stylers.svg";
+import NC from "../assets/Clients/NC.svg";
+import Master from "../assets/Clients/Master.svg";
+import HND from "../assets/Clients/HND.svg";
 import services_foot from "../assets/Clients/services_foot.svg";
 import Maple from "../assets/Clients/Maple.svg";
 import adam from "../assets/Clients/adam.svg";
 import docs from "../assets/Clients/docs.svg";
-import { motion } from "framer-motion";
-import  { useState,useEffect } from "react";
 
+// ─── Data ────────────────────────────────────────────────────────────────────
 
+const categories = [
+  "All",
+  "Internal Audit",
+  "Statutory Audit",
+  "Cost Audit",
+  "Demerger",
+  "Forensic Audit",
+  "Business Process Reengineering (BPR)",
+  "Liquidation / Agreed Upon Procedures",
+];
 
-const categories = ["All", "Internal Audit", "Statutory Audit", "Cost Audit","Demerger", "Forensic Audit", "Business Process Reengineering (BPR)","Liquidation / Agreed Upon Procedures"];
+const CATEGORY_COLORS = {
+  "Statutory Audit":                          { pill: "bg-blue-100 text-blue-800",   dot: "bg-blue-500"   },
+  "Internal Audit":                           { pill: "bg-purple-100 text-purple-800", dot: "bg-purple-500" },
+  "Cost Audit":                               { pill: "bg-emerald-100 text-emerald-800", dot: "bg-emerald-500" },
+  "Forensic Audit":                           { pill: "bg-amber-100 text-amber-800",  dot: "bg-amber-500"  },
+  "Business Process Reengineering (BPR)":     { pill: "bg-red-100 text-red-800",     dot: "bg-red-500"    },
+  "Liquidation / Agreed Upon Procedures":     { pill: "bg-gray-100 text-gray-700",   dot: "bg-gray-500"   },
+  "Demerger":                                 { pill: "bg-cyan-100 text-cyan-800",   dot: "bg-cyan-500"   },
+};
+
+const getColor = (cat) =>
+  CATEGORY_COLORS[cat] ?? { pill: "bg-gray-100 text-gray-700", dot: "bg-gray-400" };
 
 const projects = [
   {
-    title: "Service Global Footwear Limited ",
-    subtitle:"Statutory Audit - Annual ",
+    title: "Service Global Footwear Limited",
+    subtitle: "Statutory Audit – Annual",
     image: services_foot,
-    description: `
-      • Led the annual statutory audit of Service Global Footwear Limited, a public listed company engaged in the manufacturing and export of footwear, ensuring compliance with International Financial Reporting Standards (IFRS) and regulatory guidelines of the Securities and Exchange Commission of Pakistan (SECP). \n
-      •	Led the audit team throughout the engagement, from planning to completion, ensuring timely execution of audit procedures, effective team coordination, and delivery of quality audit deliverables within reporting deadlines. \n
-      •	Prepared the complete set of financial statements, including the Statement of Financial Position, Profit or Loss and Other Comprehensive Income, Statement of Cash Flows, Statement of Changes in Equity, and related notes, ensuring accuracy, consistency, and compliance with IFRS and Companies Act, 2017.\n 
-      •	Took ownership of the audit of contingencies and commitments, including legal claims, tax exposures, and guarantees, by reviewing legal correspondence, board meeting minutes, and representations from management. \n
-      •	Evaluated management’s assessments and disclosures related to contingent liabilities under IAS 37 – Provisions, Contingent Liabilities, and Contingent Assets, ensuring sufficient audit evidence and appropriate accounting treatment.\n
-      •	Collaborated with internal and external legal counsel to assess the likelihood and financial impact of ongoing litigations and regulatory matters.  \n
-      •	Prepared the audit report and management letter, summarizing key issues, control observations, and value-adding recommendations. \n
-      ` ,
     category: "Statutory Audit",
     link: "https://serviceglobalfootwear.com/",
+    description: `Led the annual statutory audit of Service Global Footwear Limited, a public listed company engaged in the manufacturing and export of footwear, ensuring compliance with IFRS and SECP regulatory guidelines.`,
+    bullets: [
+      "Led the audit team from planning to completion, ensuring timely execution and delivery within reporting deadlines.",
+      "Prepared the complete set of financial statements including SoFP, P&L, Cash Flows, Changes in Equity, and notes per IFRS and Companies Act, 2017.",
+      "Owned the audit of contingencies and commitments — legal claims, tax exposures, and guarantees — reviewing legal correspondence and board minutes.",
+      "Evaluated management disclosures under IAS 37 and collaborated with internal and external legal counsel to assess ongoing litigations.",
+      "Prepared the audit report and management letter with key findings, control observations, and value-adding recommendations.",
+    ],
   },
   {
     title: "Service Industries Limited",
-    subtitle:"Demerger and Statutory Audit - Annual ",
+    subtitle: "Demerger and Statutory Audit – Annual",
     image: services,
-    description:
-      `•	Led the end-to-end statutory audit of Service Industries Limited, a listed entity in the manufacturing and retail sector \n
-      •	Prepared the complete set of financial statements, including disclosures for contingent liabilities and other critical notes as per IFRS and applicable regulations. \n
-      •	Oversaw the demerger process, resulting in incorporation of Service Tyres (Pvt.) Ltd. and Service Retail (Pvt.) Ltd., ensuring seamless audit coverage and regulatory compliance. \n
-      •	Ensured accurate transfer of assets, liabilities, and equity between demerged and resulting entities in accordance with the demerger scheme approved by SECP. \n
-      •	Coordinated with legal and finance departments to validate the correctness of balances, ensuring a smooth and compliant transition. \n
-      •	Conducted risk assessments and implemented audit procedures tailored to demerger-related complexities, enhancing reliability of financial reporting. \n`,
-    category: ["Statutory Audit","Demerger"],
-      link: "https://servisgroup.com/",
+    category: ["Statutory Audit", "Demerger"],
+    link: "https://servisgroup.com/",
+    description: "Led the end-to-end statutory audit and oversaw the demerger resulting in Service Tyres (Pvt.) Ltd. and Service Retail (Pvt.) Ltd.",
+    bullets: [
+      "Prepared complete financial statements with IFRS-compliant disclosures for contingent liabilities and critical notes.",
+      "Ensured accurate transfer of assets, liabilities, and equity under the SECP-approved demerger scheme.",
+      "Coordinated with legal and finance departments to validate correctness of balances through transition.",
+      "Conducted risk assessments and implemented audit procedures tailored to demerger complexities.",
+    ],
   },
   {
     title: "Service Tyres (Private) Limited",
-    subtitle:"Demerger and Statutory Audit - Annual",
+    subtitle: "Demerger and Statutory Audit – Annual",
     image: services_tyres,
-    description:
-      `•	Managed the first statutory audit of Service Tyres (Private) Limited, a newly incorporated entity post-demerger from Service Industries Limited. \n
-      •	Prepared the inaugural set of financial statements, ensuring accurate incorporation of opening balances as per the approved demerger scheme and certificate. \n
-      •	Verified and ensured correct classification and recognition of assets, liabilities, and equity transferred under the demerger, in compliance with Companies Act, 2017 and relevant financial reporting standards. \n
-      •	Ensured full regulatory compliance with SECP requirements for newly incorporated entities resulting from corporate restructuring. \n
-      •	Collaborated with cross-functional teams to reconcile intercompany balances and disclosures, ensuring completeness and accuracy. \n
-      •	Played a key role in establishing initial financial reporting frameworks and control procedures for the new entity. \n`,
-    category: ["Statutory Audit","Demerger"],
+    category: ["Statutory Audit", "Demerger"],
     link: "https://www.servistyres.com/",
+    description: "Managed the inaugural statutory audit of a newly incorporated entity post-demerger from Service Industries Limited.",
+    bullets: [
+      "Prepared the first set of financial statements with accurate opening balances per the approved demerger scheme.",
+      "Verified correct classification and recognition of transferred assets, liabilities, and equity under Companies Act, 2017.",
+      "Reconciled intercompany balances and disclosures, ensuring completeness and accuracy.",
+      "Played a key role in establishing initial financial reporting frameworks and control procedures.",
+    ],
   },
   {
     title: "Service Retail (Private) Limited",
-    subtitle:"Demerger and Statutory Audit - Annual",
+    subtitle: "Demerger and Statutory Audit – Annual",
     image: services,
-    description:
-      `• Led the first statutory audit of Service Retail (Private) Limited, incorporated as a result of the demerger from Service Industries Limited. \n
-      •	Prepared the initial complete set of financial statements, ensuring accurate recognition of opening balances in line with the approved demerger certificate and scheme of arrangement. \n
-      •	Ensured proper transfer and presentation of assets, liabilities, and equity, maintaining compliance with the Companies Act, 2017 and relevant IFRS/IAS requirements. \n
-      •	Verified alignment of financial records with demerger documents and facilitated compliance with SECP regulations for newly formed entities. \n
-      •	Coordinated with the finance, legal, and audit teams to resolve demerger-related complexities and establish robust initial reporting controls. \n
-      •	Ensured timely and accurate disclosures of related party transactions and transitional adjustments, enhancing financial statement transparency and audit quality. \n`,
-    category: ["Statutory Audit","Demerger"],
+    category: ["Statutory Audit", "Demerger"],
     link: "https://servis.pk/",
+    description: "Led the first statutory audit of Service Retail (Private) Limited, incorporated from the demerger of Service Industries Limited.",
+    bullets: [
+      "Prepared initial financial statements with opening balances aligned to the approved demerger certificate.",
+      "Ensured IFRS/IAS-compliant transfer and presentation of assets, liabilities, and equity.",
+      "Verified alignment with SECP regulations and demerger documents.",
+      "Ensured timely disclosure of related party transactions and transitional adjustments.",
+    ],
   },
   {
-    title: "Stylers International Limited ",
-    subtitle:"Statutory Audit - Annual",
+    title: "Stylers International Limited",
+    subtitle: "Statutory Audit – Annual",
     image: stylers,
-    description:
-      `•	Served as Audit Senior on the statutory financial audit of Nishat Chunian Limited for the year ended 2023, a prominent textile manufacturing and export company, ensuring full compliance with International Financial Reporting Standards (IFRS) and local regulatory requirements. \n
-      •	Took lead responsibility for the audit of fixed assets, including verification of additions, disposals, depreciation, and compliance with IAS 16 – Property, Plant and Equipment, ensuring accurate asset valuation and presentation in the financial statements. \n
-      •	Reviewed the revaluation of fixed assets conducted during the year (at the 9-month mark), ensuring compliance with relevant IFRS and proper treatment of revaluation surplus and reserves in the financial statements. \n
-      •	Assessed the methodology and assumptions used by external valuation experts for revaluation, and verified incorporation of revalued figures into the fixed asset register and general ledger. \n
-      •	Evaluated the adequacy of disclosures related to revalued assets, revaluation reserves, and fair value hierarchy in the notes to the financial statements, ensuring transparency and compliance with IAS 16 and IFRS 13. \n
-      •	Conducted audit procedures on accounts payable, including supplier reconciliations, ageing analysis, cutoff testing, and review of accruals and provisions. \n
-      •	Tested the internal controls around procurement, payment cycles, and three-way matching to identify potential control deficiencies. \n
-      •	Ensured accurate classification and presentation of trade and other payables, advances from customers, and other liabilities in accordance with IFRS. \n
-      •	Prepared and reviewed relevant sections of the financial statements, including the Statement of Financial Position and related note disclosures. \n`,
     category: "Statutory Audit",
     link: "https://www.stylersintl.com/",
+    description: "Served as Audit Senior on the statutory audit, with lead responsibility over fixed assets and accounts payable.",
+    bullets: [
+      "Took lead on audit of fixed assets — additions, disposals, depreciation, revaluation — per IAS 16.",
+      "Reviewed asset revaluation at 9-month mark, verified methodology and revaluation surplus treatment.",
+      "Assessed fair value hierarchy disclosures per IAS 16 and IFRS 13.",
+      "Conducted accounts payable audit: supplier reconciliations, ageing, cutoff testing, accruals, and three-way matching.",
+    ],
   },
   {
     title: "Nishat Chunian Limited",
-    subtitle:"Statutory Audit – Annual and Special",
+    subtitle: "Statutory Audit – Annual and Special",
     image: NC,
-    description:
-      `•	Led the annual and interim statutory audits of Nishat Chunian Limited, a listed company and one of Pakistan’s leading textile exporters, ensuring compliance with International Financial Reporting Standards (IFRS) and local corporate laws. \n
-      •	Took complete responsibility for planning, execution, and timely completion of the audit engagement in coordination with the audit manager and client’s senior management. \n
-      •	Prepared complete sets of standalone financial statements, including Statement of Financial Position, Profit or Loss and Other Comprehensive Income, Statement of Changes in Equity, Statement of Cash Flows, and detailed notes in compliance with IFRS and the Companies Act, 2017.
-      \n
-      •	Prepared consolidated financial statements incorporating three foreign subsidiaries, ensuring compliance with IFRS consolidation requirements.
-      \n
-      •	Performed detailed audit procedures on long-term and short-term financing arrangements, including:  \n
-        \t •	Foreign Exchange (FE-25) loans \n
-        \t •		Temporary Economic Refinance Facility (TERF)\n
-        •	Running Finance and Short-Term Borrowings \n
-        •	Bank Overdrafts and local working capital facilities \n
-        •	International finance arrangements such as PSBA (Pre-Shipment Buyer’s Credit Agreement), FTFA (Foreign Trade Financing Agreement), and FSBA (Forward Supplier’s Bank Arrangement) \n
-      
-•	Verified loan agreements, reviewed compliance with covenants, validated interest and markup calculations, and ensured proper classification and disclosure in the financial statements. \n
-•	Confirmed financing balances with banks, ensured accurate presentation of current and non-current portions, and reviewed security and charge documentation. \n
-•	Assessed the accounting treatment of finance costs under IFRS and ensured accurate disclosure of related party transactions, if any, under IAS 24. \n
-•	Drafted the audit report and management letter, highlighting significant audit findings and recommending improvements where needed. \n`,
     category: "Statutory Audit",
-link: "https://www.nishat.net/",
+    link: "https://www.nishat.net/",
+    description: "Led annual and interim statutory audits of one of Pakistan's leading textile exporters, including consolidated financial statements.",
+    bullets: [
+      "Prepared standalone and consolidated financial statements incorporating three foreign subsidiaries.",
+      "Performed detailed procedures on FE-25 loans, TERF, Running Finance, bank overdrafts, PSBA, FTFA, and FSBA arrangements.",
+      "Verified loan covenants, interest calculations, and security/charge documentation with bank confirmations.",
+      "Drafted audit report and management letter highlighting significant findings and recommended improvements.",
+    ],
   },
   {
     title: "At Tahur Limited",
-    subtitle:"Statutory Audit - Interim",
+    subtitle: "Statutory Audit – Interim",
     image: AT,
-    description:
-      `•	Performed interim audit procedures at At-Tahur Limited, a listed dairy company producing milk, lassi, flavored milk, and other dairy products.  \n
-      •	Conducted audit of inventory and stores, covering raw materials, packing materials, WIP, and finished goods. \n
-      •	Performed physical verification testing by tracing selected inventory items to store ledgers and physical counts to confirm existence and accuracy. \n
-      •	Carried out cut-off testing around period-end to ensure accurate recording of goods issued and received. \n
-      •	Verified inventory valuation at lower of cost or NRV as per IAS 2 – Inventories, including review of cost build-up and NRV calculations. \n
-      •	Reviewed overhead allocation methodology applied to finished goods and WIP for consistency and fairness. \n
-      •	Checked Goods Receipt Notes (GRNs) and goods-in-transit to ensure timely and correct recognition in stores. \n
-      •	Performed audit procedures on trade receivables, including aging analysis and subsequent receipts testing for recoverability. \n
-      •	Assessed credit risk exposure, ensured adequacy of expected credit loss (ECL) provisioning, and verified compliance with company credit policy. \n
-      `,
     category: "Statutory Audit",
-      link: "https://www.at-tahur.com/",
+    link: "https://www.at-tahur.com/",
+    description: "Performed interim audit procedures at a listed dairy company covering inventory, stores, and receivables.",
+    bullets: [
+      "Conducted physical verification of raw materials, packing, WIP, and finished goods with store ledger tracing.",
+      "Verified inventory valuation at lower of cost or NRV per IAS 2, including overhead allocation review.",
+      "Performed cut-off testing and reviewed GRNs and goods-in-transit for timely recognition.",
+      "Assessed ECL provisioning and credit risk exposure on trade receivables.",
+    ],
   },
   {
     title: "Maple Leaf Capital Limited",
     subtitle: "Statutory Audit – Annual",
     image: Maple,
-    description:
-      `•	Prepared the complete set of financial statements, including notes to the accounts, in accordance with IFRS and relevant regulatory requirements applicable to NBFCs (Non-Banking Finance Companies). \n
-      •	Performed detailed audit procedures on the company's investment portfolio, including equities, mutual funds, and other financial instruments. \n
-      •	Verified initial recognition, classification, subsequent measurement, and disclosures of financial assets under IFRS 9 – Financial Instruments. \n
-      •	Conducted fair value testing of investments by obtaining market data, evaluating valuation methodologies, and comparing with portfolio management system records. \n
-      •	Evaluated investment income, including dividend, capital gains, and unrealized gains/losses, ensuring completeness and accurate recognition. \n
-      •	Performed existence and ownership testing of investments through third-party confirmations and broker statements. \n
-      •	Ensured compliance with regulatory guidelines issued by SECP for asset management companies and adherence to internal investment policies. \n
-      •	Assessed adequacy of disclosures related to financial instruments, risk management, and fair value hierarchy in the financial statements. \n`,
     category: "Statutory Audit",
     link: "https://www.mapleleafcapital.org/",
+    description: "Prepared complete financial statements and performed detailed procedures on the NBFC's investment portfolio.",
+    bullets: [
+      "Verified initial recognition, classification, subsequent measurement, and disclosures under IFRS 9.",
+      "Conducted fair value testing of equities, mutual funds, and financial instruments via market data and broker statements.",
+      "Evaluated investment income — dividends, capital gains, unrealized gains/losses — for completeness.",
+      "Ensured SECP regulatory compliance for asset management companies.",
+    ],
   },
   {
-    title: "Adamjee Insurance Company Limited ",
+    title: "Adamjee Insurance Company Limited",
     subtitle: "Statutory Audit – Interim",
     image: adam,
-    description:
-      `•	Acted as Audit Senior during a special audit engagement focused on understanding the entity’s operations and financial reporting framework. \n
-      •	Focused on key insurance areas including Gross Written Premium (GWP), Unearned Premium Reserve (UPR), Claims Liabilities, Reinsurance Arrangements. \n
-      •	Performed and reviewed substantive procedures, conducted walkthroughs, and applied analytical reviews to assess processes and controls. \n
-      •	Addressed key audit assertions of existence, completeness, and accuracy for insurance income and liability balances. \n
-      •	Reviewed reinsurance contracts, tested reinsurance recoveries, and verified premium cessions to reinsurers. \n
-      •	Ensured compliance with SECP insurance regulations and applicable accounting standards (e.g., IFRS 4 / IFRS 17 awareness). \n
-      •	Identified gaps in control environment and provided recommendations to enhance audit readiness and reporting quality. \n`,
-
     category: "Statutory Audit",
-      link: "https://www.adamjeeinsurance.com/",
+    link: "https://www.adamjeeinsurance.com/",
+    description: "Acted as Audit Senior on a special engagement covering insurance-specific financial reporting areas.",
+    bullets: [
+      "Focused on GWP, UPR, Claims Liabilities, and Reinsurance Arrangements.",
+      "Conducted walkthroughs, substantive procedures, and analytical reviews for insurance income and liability balances.",
+      "Reviewed reinsurance contracts, tested recoveries, and verified premium cessions.",
+      "Identified control environment gaps and provided recommendations for audit readiness.",
+    ],
   },
   {
     title: "Sefam (Private) Limited",
-    subtitle: "Business Process Engineering (BPR) and Standard operating procedures (SOPs)",
+    subtitle: "Business Process Engineering (BPR) and SOPs",
     image: sefam,
-    description:
-      `•	Conducted a comprehensive Business Process Engineering (BPR) project for Sefam (Private) Limited, a leading textile and apparel manufacturer, to streamline operations and enhance efficiency. \n
-      •	Managed a cross-functional team throughout the engagement lifecycle, including planning, fieldwork, documentation, and final reporting to senior client stakeholders. \n
-      •	Conducted extensive “As-Is” process mapping by engaging with department heads and operational staff to document current workflows, identify inefficiencies, and evaluate existing internal control mechanisms. \n
-      •	Performed a detailed Gap Analysis, identifying control weaknesses, duplication of efforts, and compliance issues across key business functions. \n
-      •	Developed a comprehensive recommendation report, providing actionable solutions to improve operational efficiency, strengthen controls, and align with industry best practices. \n
-      •	Designed and developed Standard Operating Procedures (SOPs) from scratch for critical business functions in Finance, HR, and IT, ensuring clear roles, responsibilities, and approval hierarchies. \n
-      •	Created a full suite of customized supporting documents and templates including: Purchase Order (PO), Inward Gate Pass (IGP), Sales Reconciliation Report, Leave application form and Asset Requisition Form etc.  \n
-      •	Ensured that SOPs and documentation adhered to regulatory compliance standards and were practical for day-to-day implementation. \n
-      •	Delivered presentations and conducted walkthroughs with the client’s department heads to train staff on new processes and documentation.  \n
-      •	Ensured timely delivery of all milestones within project scope, while maintaining high standards of documentation and client communication. \n
-      •	Delivered 25% faster inventory turnover and 13% cost efficiencies across supply chain and store operations.\n
-`,
     category: "Business Process Reengineering (BPR)",
-
     link: "https://sefam.com/",
+    description: "Led a comprehensive BPR project for a leading textile and apparel manufacturer to streamline operations and enhance efficiency.",
+    bullets: [
+      "Conducted extensive As-Is process mapping with department heads, identifying inefficiencies and control weaknesses.",
+      "Performed Gap Analysis across key business functions, producing a detailed recommendation report.",
+      "Designed SOPs from scratch for Finance, HR, and IT including PO, IGP, Leave forms, and Asset Requisition templates.",
+      "Delivered 25% faster inventory turnover and 13% cost efficiencies across supply chain and store operations.",
+    ],
   },
   {
     title: "Jomo Technologies (Private) Limited",
     subtitle: "Agreed Upon Procedures / Liquidator",
     image: Jomo,
-    description:
-      `•	Served on secondment at Jomo Technologies (Private) Limited, a non-going concern under the management of Service Industries Limited, to execute agreed-upon procedures during the company’s wind-up phase. \n
-      •	Acted as management-appointed liquidator, overseeing the orderly sale of assets and inventory, ensuring maximum recovery value and proper documentation. \n
-      •	Led final settlement negotiations and payments with employees, vendors, and suppliers, ensuring timely resolution of outstanding obligations. \n
-      •	Managed the company’s liquidity and cash flows, including cash management, bank reconciliation statements, and payment scheduling, to maintain financial discipline during liquidation. \n
-      •	Prepared and maintained accurate sales tax reconciliations, ensuring compliance with tax laws throughout the wind-up process. \n
-      •	Coordinated with the external audit team of Jomo Technologies and represented the management’s side to facilitate timely finalisation of audited financial statements. \n
-      •	Ensured accurate and compliant financial closure by aligning liquidation steps with applicable legal and financial reporting frameworks. \n
-      `,
-          category: "Liquidation / Agreed Upon Procedures",
-
+    category: "Liquidation / Agreed Upon Procedures",
     link: "https://pitchbook.com/profiles/company/500577-22",
+    description: "Served on secondment as management-appointed liquidator during the company's wind-up phase.",
+    bullets: [
+      "Oversaw orderly asset and inventory sales, ensuring maximum recovery value and proper documentation.",
+      "Led final settlement negotiations with employees, vendors, and suppliers.",
+      "Managed cash flows, bank reconciliations, and payment scheduling during liquidation.",
+      "Prepared sales tax reconciliations and coordinated with external auditors for financial statement finalization.",
+    ],
   },
   {
     title: "The City School",
     subtitle: "Forensic Audit",
     image: city,
-    description:
-      `•	Conducted a forensic audit at the North Region Office of The City School, overseeing financial and operational activities across 22 branches. \n
-      •	Uncovered multiple fraudulent practices in the procurement and supply chain departments, including irregular vendor dealings and unauthorized payments. \n
-      •	Performed detailed examination of payment vouchers and cross-verification with bank statements, successfully identifying and reporting instances of financial fraud. \n
-      •	Assessed the effectiveness of internal controls and identified critical weaknesses, particularly in procurement processes, documentation flow, and authorization protocols. \n
-      •	Delivered targeted recommendations for strengthening internal controls, enhancing transparency, and improving compliance with institutional policies. \n
-      •	Conducted a comprehensive HR audit, revealing unethical practices and internal control lapses related to recruitment, payroll, and attendance records. \n
-      •	Drafted and presented forensic audit reports to senior management, contributing to strategic decisions on disciplinary actions and internal restructuring. \n`,
-        category: "Forensic Audit",
-
-      link: "https://thecityschool.edu.pk/",
+    category: "Forensic Audit",
+    link: "https://thecityschool.edu.pk/",
+    description: "Conducted a forensic audit across 22 branches at the North Region Office, uncovering fraud in procurement and HR.",
+    bullets: [
+      "Uncovered fraudulent vendor dealings and unauthorized payments in procurement and supply chain.",
+      "Cross-verified payment vouchers with bank statements to identify and report financial fraud.",
+      "Identified critical weaknesses in authorization protocols, documentation flow, and procurement controls.",
+      "Conducted a comprehensive HR audit revealing unethical practices in recruitment, payroll, and attendance.",
+    ],
   },
   {
     title: "Sindh Bank Limited",
     subtitle: "Compliance Audit",
     image: Sindh,
-    description:
-      `•	Performed branch audits in accordance with firm methodology and SBP/AML regulatory frameworks, covering operations, compliance, and internal controls. \n
-      •	Physically verified branch closing cash balances, ensured dual control over keys, adherence to SBP cash limits, and reviewed surprise cash count processes. \n
-      •	Verified account opening and closure processes, ensuring compliance with KYC, customer due diligence, and SBP Prudential Regulations. \n
-      •	Reviewed documentation and reactivation process of dormant accounts, ensuring updated KYC and proper approvals. \n
-      •	Evaluated AML/CFT implementation including STR/CTR reporting mechanisms, staff training records, and sanctions list screening. \n
-      •	Inspected tagging and existence of fixed assets, branch security measures (CCTV, alarm systems), and administrative records. \n
-      •	Reviewed outsourced service contracts, cheque book/ATM issuance controls, and ensured compliance with display requirements. \n
-      •	Examined system reports (GLs, MIS), tested TDR processes (initiation, renewal, interest), and ensured proper CBS audit trails. \n
-      `,
+    category: "Internal Audit",
     link: "https://www.sindhbank.com.pk/",
+    description: "Performed branch audits per SBP/AML regulatory frameworks covering operations, compliance, and internal controls.",
+    bullets: [
+      "Verified closing cash balances, dual controls, SBP cash limits, and surprise cash count processes.",
+      "Reviewed KYC, CDD, and account opening/closure compliance with Prudential Regulations.",
+      "Evaluated AML/CFT implementation — STR/CTR reporting, sanctions screening, and staff training.",
+      "Examined CBS audit trails, TDR processes, and outsourced service contract controls.",
+    ],
   },
   {
     title: "DOCS Medical Billing, LLC",
-    subtitle: "Human Resource and Information Technology Audit",
+    subtitle: "HR and IT Audit",
     image: docs,
-    description:
-      `
-    •	Conducted a comprehensive internal audit at DOCS Medical Billing, covering key operational areas including HR and IT functions. \n
-    •	Performed a thorough HR audit, identifying significant internal control weaknesses in attendance tracking, leave management, and the approval process. \n
-    •	Assessed the completeness and accuracy of employee records, highlighting gaps in employee file maintenance and documentation compliance. \n
-    •	Reviewed and reported on the adequacy of HR policies and procedures, recommending improvements for enhanced governance and accountability. \n
-    •	Carried out a detailed IT audit, verifying the physical existence, tagging, and stock count of IT equipment and assets. \n
-    •	Identified policy gaps and inconsistencies in the issuance and tracking of IT equipment provided to employees, exposing risks of misuse and accountability issues. \n
-    •	Proposed structured policy improvements and controls for asset management, enhancing operational efficiency and record accuracy. \n
-    `,
     category: "Internal Audit",
-    
     link: "https://docsmedicalbilling.com/",
+    description: "Conducted a comprehensive internal audit covering HR and IT functions at a US-based medical billing company.",
+    bullets: [
+      "Identified control weaknesses in attendance tracking, leave management, and approval processes.",
+      "Assessed completeness and accuracy of employee records and documentation compliance.",
+      "Verified physical existence, tagging, and stock count of IT equipment and assets.",
+      "Proposed structured policy improvements for asset management and IT equipment issuance controls.",
+    ],
   },
   {
     title: "Masters Textile Mills Limited",
-    subtitle: "Internal Audit – Procurement & Inventory",
+    subtitle: "Internal Audit & Cost Audit – Procurement & Inventory",
     image: Master,
-    description:
-      `The objective was to strengthen transparency, accountability, and accuracy of goods received and recorded, while also identifying weaknesses in internal control and process efficiency.\n
-
-Key Outcomes:
-• Initiated a dedicated receipt room assignment, ensuring that a third-party physically verifies goods entering the premises and records them based on actual quantities received.\n
-• Identified key weaknesses in internal controls within the procurement department, including gaps in documentation, approval hierarchy, and material handling.\n
-• Streamlined the entire procurement process — from purchase order creation and approval to receipt and storage of goods — ensuring process transparency and accountability.\n
-• Improved alignment between procurement, stores, and accounts departments, ensuring real-time updates and accurate GRN (Goods Receipt Note) generation.\n
-`,
-    subtitle1: "Cost Audit – Procurement & Inventory\n",
-        description1:
-        `The focus was to ensure proper classification of costs, detect inefficiencies in consumption, and provide management with reliable data for cost control and decision-making.\n
-
-        Key Outcomes:
-• Verified accurate recording and allocation of procurement costs (purchase price, freight, duties, etc.) into inventory and cost centers.\n
-• Analyzed material consumption variances between standard and actual usage, identifying inefficiencies and wastage.\n
-• Evaluated GRN postings and store ledgers for correct valuation and timely cost recognition.\n
-• Ensured proper allocation of costs to production departments, in line with Cost Accounting Records Rules (Textiles).\n
-• Enhanced transparency of cost statements, enabling management to make informed pricing and budgeting decisions.\n`,
-
-
-        category: ["Internal Audit","Cost Audit"],
-
-      link: "https://mastertex.com/",
+    category: ["Internal Audit", "Cost Audit"],
+    link: "https://mastertex.com/",
+    description: "Strengthened procurement controls and cost visibility across procurement and inventory functions.",
+    bullets: [
+      "Initiated dedicated receipt room assignment for third-party physical verification of inbound goods.",
+      "Identified weaknesses in documentation, approval hierarchy, and material handling.",
+      "Streamlined procurement from PO creation through receipt and storage, improving GRN accuracy.",
+      "Verified cost allocation accuracy, analyzed material consumption variances, and enhanced cost statement transparency.",
+    ],
   },
-
   {
     title: "Procon Engineering (Private) Limited",
     subtitle: "Internal Audit and Process Improvement",
     image: procon,
-    description:
-      `•	Initiated a dedicated receipt room assignment, ensuring that a third-party physically verifies goods entering the premises and records them based on actual quantities received. \n
-      •	Oversaw implementation of a verification mechanism that improved the accuracy of inventory records and strengthened control over inbound materials. \n    
-      •	Identified key weaknesses in internal controls within the procurement department, including gaps in documentation, approval hierarchy, and material handling. \n      
-      •	Streamlined the entire procurement process — from purchase order creation and approval to receipt and storage of goods — ensuring process transparency and accountability. \n
-      •	Improved alignment between procurement, stores, and accounts departments, ensuring real-time updates and accurate GRN (Goods Receipt Note) generation.\n
-      •	Enhanced control environment by recommending procedural changes, tightening roles and responsibilities, and ensuring segregation of duties. \n
-      •	Contributed to improved inventory accuracy, reduced discrepancies, and stronger audit trail for material receipts and vendor performance tracking. \n`,
-        category: "Internal Audit",
-
-      link: "https://procon.com.pk/",
+    category: "Internal Audit",
+    link: "https://procon.com.pk/",
+    description: "Led internal audit and process improvement engagement focused on procurement and inventory controls.",
+    bullets: [
+      "Implemented third-party goods verification at receipt room, improving inventory record accuracy.",
+      "Identified control gaps in procurement documentation, approval hierarchy, and material handling.",
+      "Streamlined procurement process from PO approval to storage with real-time GRN generation.",
+      "Recommended segregation of duties and procedural changes, reducing discrepancies and strengthening audit trails.",
+    ],
   },
   {
     title: "H. Nizam Din & Sons (Private) Limited",
-    subtitle: "Internal Audit – Procurement & Inventory",
+    subtitle: "Internal Audit & Cost Audit – Procurement & Inventory",
     image: HND,
-    description:
-      `The objective was to strengthen transparency, accountability, and accuracy of goods received and recorded, while also identifying weaknesses in internal control and process efficiency.\n
-
-Key Outcomes:
-• Initiated a dedicated receipt room assignment, ensuring that a third-party physically verifies goods entering the premises and records them based on actual quantities received.\n
-• Identified key weaknesses in internal controls within the procurement department, including gaps in documentation, approval hierarchy, and material handling.\n
-• Streamlined the entire procurement process — from purchase order creation and approval to receipt and storage of goods — ensuring process transparency and accountability.\n
-• Improved alignment between procurement, stores, and accounts departments, ensuring real-time updates and accurate GRN (Goods Receipt Note) generation.\n`,
-subtitle1: "Cost Audit – Procurement & Inventory\n",
-        description1:
-        `The focus was to ensure proper classification of costs, detect inefficiencies in consumption, and provide management with reliable data for cost control and decision-making.\n
-
-        Key Outcomes:
-• Verified accurate recording and allocation of procurement costs (purchase price, freight, duties, etc.) into inventory and cost centers.\n
-• Analyzed material consumption variances between standard and actual usage, identifying inefficiencies and wastage.\n
-• Evaluated GRN postings and store ledgers for correct valuation and timely cost recognition.\n
-• Ensured proper allocation of costs to production departments, in line with Cost Accounting Records Rules (Textiles).\n
-• Enhanced transparency of cost statements, enabling management to make informed pricing and budgeting decisions.\n`,
-        category: ["Internal Audit","Cost Audit"],
-
-      link: "https://nizamgroup.com/",
+    category: ["Internal Audit", "Cost Audit"],
+    link: "https://nizamgroup.com/",
+    description: "Combined internal and cost audit engagement to strengthen controls and cost classification accuracy.",
+    bullets: [
+      "Initiated dedicated receipt room assignment ensuring quantity-based third-party verification.",
+      "Identified procurement control weaknesses and streamlined the end-to-end process.",
+      "Verified procurement cost allocation, analyzed material consumption variances, and assessed NRV.",
+      "Ensured Cost Accounting Records Rules (Textiles) compliance and improved cost statement transparency.",
+    ],
   },
 ];
 
+// ─── Helpers ─────────────────────────────────────────────────────────────────
 
-const getCategoryColor = (category) => {
-  switch (category) {
-    case "Statutory Audit": return "from-blue-400 to-cyan-500";
-    case "Internal Audit": return "from-purple-400 to-pink-500" ;
-    case "Cost Audit": return "from-emerald-400 to-teal-500";
-    case "Forensic Audit": return "from-yellow-400 to-orange-500";
-    case "Business Process Reengineering (BPR)": return "from-red-400 to-pink-500";
-    case "Liquidation / Agreed Upon Procedures": return "from-gray-400 to-gray-600";
-    default: return "from-gray-400 to-gray-600";
-  }
-};
-  
+const toArray = (v) => (Array.isArray(v) ? v : [v]);
 
-function Clients() {
-  
-    const [selectedCategory, setSelectedCategory] = useState("All");
-  const [isVisible, setIsVisible] = useState(false);
-useEffect(() => {
-    setIsVisible(true);
+const matchesFilter = (project, filter) =>
+  filter === "All" || toArray(project.category).includes(filter);
+
+// ─── Modal ───────────────────────────────────────────────────────────────────
+
+function DetailModal({ project, onClose }) {
+  // Close on Escape
+  useEffect(() => {
+    const handler = (e) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [onClose]);
+
+  // Prevent body scroll
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = ""; };
   }, []);
 
-// const filteredProjects = selectedCategory === "All"
-//   ? projects
-//   : projects.filter(project => project.categories.includes(selectedCategory));
-
-// filtering
-// ✅ Normalize category to always be an array
-const filteredProjects =
-  selectedCategory === "All"
-    ? projects
-    : projects.filter((project) => {
-        const categories = Array.isArray(project.category)
-          ? project.category
-          : [project.category]; // wrap string in array
-        return categories.includes(selectedCategory);
-      });
-
+  const cats = toArray(project.category);
 
   return (
-    <section id="portfolio" className="py-12 text-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="mb-12">
-          <h1 className="text-3xl font-bold text-blue-700">Key Clientele <span className="text-gray-800">- Nexia International</span> </h1>
-        </div>
-        
-{/* ✅ Category Filter */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
-          {categories.map((category, index) => (
-            <motion.button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ${
-                selectedCategory === category
-                  ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25"
-                  : "bg-white/10 backdrop-blur-sm border border-white/20 text-black hover:bg-white/20 hover:border-white/30"
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              {category}
-            </motion.button>
-          ))}
-        </div>
+    <motion.div
+      className="fixed inset-0 z-50 flex items-center justify-center px-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+    >
+      {/* Backdrop */}
+      <motion.div
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        onClick={onClose}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      />
 
-
-
-        {/* ✅ Projects Grid */}
-        <div className="grid grid-cols-1 max-w-6xl mt-5 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <div
-              key={index}
-              className="group bg-white text-black p-6 mt-5 rounded-lg shadow-md transition-all duration-300"
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-96 h-52 object-fill rounded-t-lg"
-              />
-              <h2 className="text-1xl font-bold mt-4">{project.title}</h2>
-              <h2 className="text-1xl font-bold mt-4">{project.subtitle}</h2>
-
-              {/* ✅ Expandable description */}
-              <div className="mt-2 overflow-hidden max-h-16 group-hover:max-h-[1150px] transition-all duration-500 ease-in-out">
-                 {project.description
-    ? project.description.split("\n").map((line, i) => (
-        <p key={i} className="text-sm leading-relaxed text-justify">
-          {line}
-        </p>
-      ))
-    : null}
-
-  {project.subtitle1 && (
-    <h2 className="text-1xl font-bold mt-4">{project.subtitle1}</h2>
-  )}
-
-  {project.description1
-    ? project.description1.split("\n").map((line, i) => (
-        <p key={i} className="mt-2 text-sm leading-relaxed text-justify">
-          {line}
-        </p>
-      ))
-    : null}
-              {/* <p className="text-sm leading-relaxed text-justify">{project.description1}</p> */}
-
-                {/* ✅ Show multiple categories */}
-                <div className="flex flex-col items-center mt-3">
-                  <div className="flex flex-wrap justify-center gap-2 mt-3">
-  {(Array.isArray(project.category) ? project.category : [project.category]).map(
-    (cat, i) => (
-      <span
-        key={i}
-        className={`px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getCategoryColor(
-          cat
-        )} text-white`}
+      {/* Panel */}
+      <motion.div
+        className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+        initial={{ opacity: 0, y: 40, scale: 0.96 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 30, scale: 0.97 }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
       >
-        {cat}
-      </span>
-    )
-  )}
-</div>
+        {/* Header image strip */}
+        <div className="h-44 bg-gray-50 flex items-center justify-center border-b border-gray-100 rounded-t-2xl overflow-hidden px-8">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="max-h-32 max-w-full object-contain"
+          />
+        </div>
 
+        {/* Body */}
+        <div className="p-7">
+          {/* Categories */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {cats.map((cat) => (
+              <span
+                key={cat}
+                className={`text-xs font-semibold px-3 py-1 rounded-full ${getColor(cat).pill}`}
+              >
+                {cat}
+              </span>
+            ))}
+          </div>
 
-                  {/* View button */}
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-block bg-black text-white py-2 px-4 rounded border border-blue-500 hover:bg-blue-500 transition"
-                  >
-                    View
-                  </a>
-                </div>
-              </div>
-            </div>
+          <h2 className="text-xl font-bold text-gray-900 leading-snug">{project.title}</h2>
+          <p className="text-sm font-medium text-blue-600 mt-1 mb-4">{project.subtitle}</p>
+
+          <p className="text-sm text-gray-600 leading-relaxed mb-5">{project.description}</p>
+
+          {/* Bullet points */}
+          <ul className="space-y-3">
+            {project.bullets.map((b, i) => (
+              <li key={i} className="flex gap-3 text-sm text-gray-700 leading-relaxed">
+                <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-blue-500" />
+                {b}
+              </li>
+            ))}
+          </ul>
+
+          {/* Actions */}
+          <div className="flex items-center gap-3 mt-8 pt-6 border-t border-gray-100">
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 text-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200"
+            >
+              Visit Website ↗
+            </a>
+            <button
+              onClick={onClose}
+              className="flex-1 text-center bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+
+        {/* Close ✕ */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 text-gray-700 text-lg leading-none transition-colors"
+          aria-label="Close"
+        >
+          ✕
+        </button>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+// ─── Card ────────────────────────────────────────────────────────────────────
+
+function ProjectCard({ project, index, onClick }) {
+  const cats = toArray(project.category);
+
+  return (
+    <motion.div
+      className="group relative bg-white rounded-2xl border border-gray-100 shadow-sm
+                 cursor-pointer overflow-hidden flex flex-col"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
+      whileHover={{ y: -4, boxShadow: "0 16px 40px rgba(0,0,0,0.10)" }}
+      whileTap={{ scale: 0.98 }}
+      onClick={onClick}
+      layout
+    >
+      {/* Logo area */}
+      <div className="h-40 bg-gray-50 flex items-center justify-center border-b border-gray-100 px-6">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="max-h-24 max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-col flex-1 p-5">
+        {/* Category dots */}
+        <div className="flex gap-1.5 mb-3">
+          {cats.map((cat) => (
+            <span
+              key={cat}
+              className={`w-2 h-2 rounded-full ${getColor(cat).dot}`}
+              title={cat}
+            />
           ))}
+        </div>
+
+        <h3 className="text-sm font-bold text-gray-900 leading-snug">{project.title}</h3>
+        <p className="text-xs text-blue-600 font-medium mt-1">{project.subtitle}</p>
+
+        <p className="text-xs text-gray-500 mt-3 leading-relaxed line-clamp-3">
+          {project.description}
+        </p>
+
+        {/* Footer */}
+        <div className="mt-auto pt-4 flex items-center justify-between">
+          <div className="flex flex-wrap gap-1.5">
+            {cats.slice(0, 2).map((cat) => (
+              <span
+                key={cat}
+                className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${getColor(cat).pill}`}
+              >
+                {cat}
+              </span>
+            ))}
+          </div>
+          <span className="text-xs font-semibold text-blue-600 group-hover:underline shrink-0">
+            Details →
+          </span>
         </div>
       </div>
+    </motion.div>
+  );
+}
+
+// ─── Main ────────────────────────────────────────────────────────────────────
+
+function Clients() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [activeProject, setActiveProject] = useState(null);
+
+  const filtered = projects.filter((p) => matchesFilter(p, selectedCategory));
+  const closeModal = useCallback(() => setActiveProject(null), []);
+
+  return (
+    <section id="portfolio" className="py-16 bg-white min-h-screen">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+
+        {/* Heading */}
+        <div className="mb-10">
+          <h1 className="text-3xl font-bold text-blue-700">
+            Key Clientele{" "}
+            <span className="text-gray-500 font-normal">— Nexia International</span>
+          </h1>
+          <p className="text-sm text-gray-400 mt-1">
+            Click any card to explore engagement details.
+          </p>
+        </div>
+
+        {/* Filter bar */}
+        <div className="flex flex-wrap gap-2 mb-10">
+          {categories.map((cat) => {
+            const active = selectedCategory === cat;
+            const color = getColor(cat);
+            return (
+              <motion.button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-4 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 ${
+                  active
+                    ? "bg-blue-600 text-white border-blue-600 shadow"
+                    : "bg-white text-gray-600 border-gray-200 hover:border-blue-300 hover:text-blue-600"
+                }`}
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+              >
+                {cat}
+              </motion.button>
+            );
+          })}
+        </div>
+
+        {/* Grid */}
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          layout
+        >
+          <AnimatePresence mode="popLayout">
+            {filtered.map((project, i) => (
+              <ProjectCard
+                key={project.title}
+                project={project}
+                index={i}
+                onClick={() => setActiveProject(project)}
+              />
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
+        {filtered.length === 0 && (
+          <p className="text-center text-gray-400 py-20 text-sm">
+            No engagements found for this category.
+          </p>
+        )}
+      </div>
+
+      {/* Modal */}
+      <AnimatePresence>
+        {activeProject && (
+          <DetailModal project={activeProject} onClose={closeModal} />
+        )}
+      </AnimatePresence>
     </section>
   );
 }

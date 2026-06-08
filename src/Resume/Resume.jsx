@@ -241,7 +241,20 @@ import React from "react";
 
 const experience = [
   {
-    date: "Dec 2025 – Present",
+    date: "March 2026 - Present",
+    role: "Senior Auditor (Remote) - Capital Plus Auditing of Accounts (CPA) - Dubai, UAE",
+    points: [
+      "Led statutory audits and assurance engagements for companies across various industries in the UAE, ensuring compliance with International Standards on Auditing (ISA) and applicable regulatory requirements.",
+      "Prepared and reviewed complete sets of financial statements in accordance with International Financial Reporting Standards (IFRS), including disclosures, accounting policies, and supporting schedules.",
+      "Assisted clients with UAE Corporate Tax compliance, including tax computations, assessment of tax positions, and preparation of supporting documentation in line with Federal Tax Authority (FTA) requirements.",
+      "Managed Value Added Tax (VAT) compliance engagements, including VAT return preparation, reconciliations, transaction reviews, and advisory on UAE VAT regulations.",
+      "Prepared and reviewed audit documentation and corporate records, including Know Your Customer (KYC) files, Engagement Letters, Management Representation Letters, and Independent Auditor’s Reports.",
+      "Coordinated directly with client management and finance teams to identify control weaknesses, resolve accounting issues, and provide practical recommendations for improving financial reporting and regulatory compliance.",
+      // "Supervised, coached, and trained audit staff, improving team performance and ensuring timely completion of deliverables within budget.",
+    ],
+  },
+  {
+    date: "Dec 2025 – March 2026",
     role: "Audit Supervisor-Nexia International",
     points: [
       "Led and supervised multiple statutory audit engagements for large and complex clients across manufacturing, retail, insurance, banking, textile, oil & gas, and services sectors.",
