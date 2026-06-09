@@ -217,181 +217,202 @@
 //   );
 // };
 
-// export default Resume;
-import React from "react";
+  // export default Resume;
+  import React from "react";
+  import riazahmad from "../assets/Resume/Riaz.jpeg";
+  import capital from "../assets/Resume/capital.svg";
+  import ndf from "../assets/Resume/ndf.svg";
 
-// const skills = [
-//   { name: "International Financial Reporting Standards", level: "95%" },
-//   { name: "Financial Statements Preparation", level: "90%" },
-//   { name: "Financial Modeling and Forecasting", level: "90%" },
-//   { name: "Due Diligence and Business Insights", level: "90%" },
-//   { name: "Financial Auditing and Assurance (IFRS)", level: "90%" },
-//   { name: "Audit Strategy and Development", level: "90%" },
-//   { name: "Regulatory Compliance and Reporting", level: "90%" },
-//   { name: "Journal Entries", level: "90%" },
-//   { name: "Data Analytics and Management", level: "90%" },
-//   { name: "Microsoft Power BI", level: "90%" },
-//   { name: "Oracle", level: "90%" },
-//   { name: "Team Leadership & Training", level: "90%" },
-//   { name: "Effective Communication", level: "90%" },
-//   { name: "Report Writing and Presentation Skills", level: "85%" },
-//   { name: "Presentation Skills", level: "85%" },
-//   { name: "Professional Ethics", level: "85%" },
-// ];
+  // const skills = [
+  //   { name: "International Financial Reporting Standards", level: "95%" },
+  //   { name: "Financial Statements Preparation", level: "90%" },
+  //   { name: "Financial Modeling and Forecasting", level: "90%" },
+  //   { name: "Due Diligence and Business Insights", level: "90%" },
+  //   { name: "Financial Auditing and Assurance (IFRS)", level: "90%" },
+  //   { name: "Audit Strategy and Development", level: "90%" },
+  //   { name: "Regulatory Compliance and Reporting", level: "90%" },
+  //   { name: "Journal Entries", level: "90%" },
+  //   { name: "Data Analytics and Management", level: "90%" },
+  //   { name: "Microsoft Power BI", level: "90%" },
+  //   { name: "Oracle", level: "90%" },
+  //   { name: "Team Leadership & Training", level: "90%" },
+  //   { name: "Effective Communication", level: "90%" },
+  //   { name: "Report Writing and Presentation Skills", level: "85%" },
+  //   { name: "Presentation Skills", level: "85%" },
+  //   { name: "Professional Ethics", level: "85%" },
+  // ];
 
-const experience = [
-  {
-    date: "March 2026 - Present",
-    role: "Senior Auditor (Remote) - Capital Plus Auditing of Accounts (CPA) - Dubai, UAE",
-    points: [
-      "Led statutory audits and assurance engagements for companies across various industries in the UAE, ensuring compliance with International Standards on Auditing (ISA) and applicable regulatory requirements.",
-      "Prepared and reviewed complete sets of financial statements in accordance with International Financial Reporting Standards (IFRS), including disclosures, accounting policies, and supporting schedules.",
-      "Assisted clients with UAE Corporate Tax compliance, including tax computations, assessment of tax positions, and preparation of supporting documentation in line with Federal Tax Authority (FTA) requirements.",
-      "Managed Value Added Tax (VAT) compliance engagements, including VAT return preparation, reconciliations, transaction reviews, and advisory on UAE VAT regulations.",
-      "Prepared and reviewed audit documentation and corporate records, including Know Your Customer (KYC) files, Engagement Letters, Management Representation Letters, and Independent Auditor’s Reports.",
-      "Coordinated directly with client management and finance teams to identify control weaknesses, resolve accounting issues, and provide practical recommendations for improving financial reporting and regulatory compliance.",
-      // "Supervised, coached, and trained audit staff, improving team performance and ensuring timely completion of deliverables within budget.",
-    ],
-  },
-  {
-    date: "Dec 2025 – March 2026",
-    role: "Audit Supervisor-Nexia International",
-    points: [
-      "Led and supervised multiple statutory audit engagements for large and complex clients across manufacturing, retail, insurance, banking, textile, oil & gas, and services sectors.",
-      "Planned engagements end-to-end including scoping, resource allocation, risk assessment, materiality determination, and audit strategy development using a risk-based approach.",
-      "Reviewed financial statements and group consolidations for compliance with IFRS and local regulatory requirements, including application of IFRS 9, 15, 16 and consolidation standards (IFRS 3 & 10).",
-      "Directed and reviewed audit fieldwork and working papers, ensuring compliance with ISA and firm quality control standards before manager and partner review.",
-      "Evaluated internal control frameworks, identified control gaps, and issued practical recommendations to strengthen governance and financial reporting reliability.",
-      "Coordinated closely with client senior management and audit committees, presenting key audit findings and resolving complex accounting and reporting matters.",
-      "Supervised, coached, and trained audit staff, improving team performance and ensuring timely completion of deliverables within budget.",
-    ],
-  },
-  {
-    date: "Apr 2024 – Dec 2025",
-    role: "Audit Senior-Nexia International",
-    points: [
-      "Took overall responsibility for planning, execution, and completion of audit engagements for large and complex clients.",
-      "Prepared and reviewed complete sets of financial statements, including notes to the accounts, in accordance with IFRS and local regulatory requirements.",
-      "Prepared comprehensive risk assessment documentation and determined materiality thresholds for audit engagements.",
-      "Reviewed and finalized audit work performed by the team, ensuring compliance with ISA, IFRS, and the firm’s quality control standards.",
-      "Conducted opening and closing meetings with client management to agree on timelines, scope, findings, and reporting.",
-      "Prepared and presented Business Process Re-engineering (BPR) report including AS-IS Business Operations and Gap Analysis report and recommendations on internal controls and financial weaknesses in alignment with industry standards and IFRS/IAS.",
-      "Responsible for accurate and appropriate de-merger of Service Industries Limited into Service Industries Limited, Service Tyre (Private) Limited, and Service Retail (Private) Limited, ensuring compliance with the approved de-merger scheme and legal requirements.",
-      "Ensured the accuracy of inter-company balances and oversaw the proper transfer of assets, liabilities, and equity balances in accordance with the de-merger plan and accounting standards.",
-      "Identified and assessed risks of material misstatement due to fraud or error, and developed appropriate audit responses.",
-      "Managed multiple engagements simultaneously, ensuring adherence to budgets and timelines.",
-      "Participated in firm-level initiatives such as quality assurance reviews, technical research, and preparation of audit methodology improvements.",
-    ],
-  },
-  {
-    date: "Mar 2023 – Apr 2024",
-    role: "Audit Semi Senior – Nexia International",
-    points: [
-    "Supervised small audit teams during engagements, reviewing the work performed by audit associates and ensuring quality standards were maintained.",
-    "Performed risk assessments, designed audit procedures, and executed audit programs independently for assigned sections.",
-    "Drafted financial statements, management letters, and audit reports in accordance with applicable financial reporting frameworks.",
-    "Identified internal control weaknesses and proposed recommendations to management.",
-    "Coordinated with tax and advisory teams for multidisciplinary engagements (e.g., audits involving tax exposure or system implementation).",
-    "Assisted in resolving technical issues related to accounting treatments and audit findings in consultation with audit seniors and managers.",
-    "Trained and mentored junior staff through on-the-job coaching and performance feedback.",
-    "Contributed to maintaining long-term client relationships by ensuring professional and timely service delivery.",
-    "Hired by Service Industries Limited as a Liquidator for JOMO Technologies (PVT) Limited (Associated Company of Service Industries Limited), where I was responsible for following duties:",
+  const experience = [
+    {
+      date: "March 2026 - Present",
+      role: "Senior Auditor (Remote) - Capital Plus Auditing of Accounts (CPA) - Dubai, UAE",
+      logo: capital,
+      points: [
+        "Led statutory audits and assurance engagements for companies across various industries in the UAE, ensuring compliance with International Standards on Auditing (ISA) and applicable regulatory requirements.",
+        "Prepared and reviewed complete sets of financial statements in accordance with International Financial Reporting Standards (IFRS), including disclosures, accounting policies, and supporting schedules.",
+        "Assisted clients with UAE Corporate Tax compliance, including tax computations, assessment of tax positions, and preparation of supporting documentation in line with Federal Tax Authority (FTA) requirements.",
+        "Managed Value Added Tax (VAT) compliance engagements, including VAT return preparation, reconciliations, transaction reviews, and advisory on UAE VAT regulations.",
+        "Prepared and reviewed audit documentation and corporate records, including Know Your Customer (KYC) files, Engagement Letters, Management Representation Letters, and Independent Auditor’s Reports.",
+        "Coordinated directly with client management and finance teams to identify control weaknesses, resolve accounting issues, and provide practical recommendations for improving financial reporting and regulatory compliance.",
+        // "Supervised, coached, and trained audit staff, improving team performance and ensuring timely completion of deliverables within budget.",
+      ],
+    },
+    {
+      date: "Dec 2025 – March 2026",
+      role: "Audit Supervisor-Nexia International",
+      logo: riazahmad,
+      points: [
+        "Led and supervised multiple statutory audit engagements for large and complex clients across manufacturing, retail, insurance, banking, textile, oil & gas, and services sectors.",
+        "Planned engagements end-to-end including scoping, resource allocation, risk assessment, materiality determination, and audit strategy development using a risk-based approach.",
+        "Reviewed financial statements and group consolidations for compliance with IFRS and local regulatory requirements, including application of IFRS 9, 15, 16 and consolidation standards (IFRS 3 & 10).",
+        "Directed and reviewed audit fieldwork and working papers, ensuring compliance with ISA and firm quality control standards before manager and partner review.",
+        "Evaluated internal control frameworks, identified control gaps, and issued practical recommendations to strengthen governance and financial reporting reliability.",
+        "Coordinated closely with client senior management and audit committees, presenting key audit findings and resolving complex accounting and reporting matters.",
+        "Supervised, coached, and trained audit staff, improving team performance and ensuring timely completion of deliverables within budget.",
+      ],
+    },
+    {
+      date: "Apr 2024 – Dec 2025",
+      role: "Audit Senior-Nexia International",
+      logo: riazahmad,
+      points: [
+        "Took overall responsibility for planning, execution, and completion of audit engagements for large and complex clients.",
+        "Prepared and reviewed complete sets of financial statements, including notes to the accounts, in accordance with IFRS and local regulatory requirements.",
+        "Prepared comprehensive risk assessment documentation and determined materiality thresholds for audit engagements.",
+        "Reviewed and finalized audit work performed by the team, ensuring compliance with ISA, IFRS, and the firm’s quality control standards.",
+        "Conducted opening and closing meetings with client management to agree on timelines, scope, findings, and reporting.",
+        "Prepared and presented Business Process Re-engineering (BPR) report including AS-IS Business Operations and Gap Analysis report and recommendations on internal controls and financial weaknesses in alignment with industry standards and IFRS/IAS.",
+        "Responsible for accurate and appropriate de-merger of Service Industries Limited into Service Industries Limited, Service Tyre (Private) Limited, and Service Retail (Private) Limited, ensuring compliance with the approved de-merger scheme and legal requirements.",
+        "Ensured the accuracy of inter-company balances and oversaw the proper transfer of assets, liabilities, and equity balances in accordance with the de-merger plan and accounting standards.",
+        "Identified and assessed risks of material misstatement due to fraud or error, and developed appropriate audit responses.",
+        "Managed multiple engagements simultaneously, ensuring adherence to budgets and timelines.",
+        "Participated in firm-level initiatives such as quality assurance reviews, technical research, and preparation of audit methodology improvements.",
+      ],
+    },
+    {
+      date: "Mar 2023 – Apr 2024",
+      role: "Audit Semi Senior – Nexia International",
+        logo: riazahmad,
+      points: [
+      "Supervised small audit teams during engagements, reviewing the work performed by audit associates and ensuring quality standards were maintained.",
+      "Performed risk assessments, designed audit procedures, and executed audit programs independently for assigned sections.",
+      "Drafted financial statements, management letters, and audit reports in accordance with applicable financial reporting frameworks.",
+      "Identified internal control weaknesses and proposed recommendations to management.",
+      "Coordinated with tax and advisory teams for multidisciplinary engagements (e.g., audits involving tax exposure or system implementation).",
+      "Assisted in resolving technical issues related to accounting treatments and audit findings in consultation with audit seniors and managers.",
+      "Trained and mentored junior staff through on-the-job coaching and performance feedback.",
+      "Contributed to maintaining long-term client relationships by ensuring professional and timely service delivery.",
+      "Hired by Service Industries Limited as a Liquidator for JOMO Technologies (PVT) Limited (Associated Company of Service Industries Limited), where I was responsible for following duties:",
 
-  "•Bank reconciliation statements and cashflow management.",
-  "•Final settlements with suppliers and employees.",
-  "•Reconciliations of fixed assets, inventory and refundable sales tax.",
-  "•Coordinating with external auditors for annual accounts of JOMO Technologies (Pvt) LTD.",]
-  },
-  {
-    date: "Jan 2022 – Mar 2023",
-    role: "Audit Associate – Nexia International",
-    points: [
-    "Assisted in performing external audits of clients in various industries under the direct supervision of seniors and managers.",
-    "Carried out substantive testing on financial statement items such as cash and bank, receivables, payables, inventory, and fixed assets.",
-    "Prepared working papers and documented audit procedures performed in compliance with International Standards on Auditing (ISA).",
-    "Participated in interim and final audit engagements, including walkthroughs and control testing.",
-    "Assisted in vouching, verification, and analytical review procedures for various financial statement components.",
-    "Supported the team in gathering audit evidence, understanding clients’ accounting systems, and identifying potential issues.",
-    "Communicated and coordinated with client personnel for information requirements and clarifications.",
-    "Worked on basic tax and regulatory compliance tasks when required, including initial preparation of tax computations.",
-    "Developed a foundational understanding of applicable financial reporting frameworks (e.g., IFRS).",
-    "Served as Internal Auditor, responsible for maintaining Standard Operating Procedures (SOPs) for raw material procurement, conducting gap analysis, and providing recommendations for internal controls in accordance with industry practices.",
-    ],
-  },
-  {
-    date: "Oct 2021 – Dec 2021",
-    role: "Accounts Intern – Nishat Linen (PVT) Limited",
-    points: [
-      "Handled expense booking, journal voucher entries, and bank payment processing for rent and advertisement expenses.",
-      "Conducted stock count observations and recorded financial transactions through double entries on Oracle.",
-    ],
-  },
-];
+    "•Bank reconciliation statements and cashflow management.",
+    "•Final settlements with suppliers and employees.",
+    "•Reconciliations of fixed assets, inventory and refundable sales tax.",
+    "•Coordinating with external auditors for annual accounts of JOMO Technologies (Pvt) LTD.",]
+    },
+    {
+      date: "Jan 2022 – Mar 2023",
+      role: "Audit Associate – Nexia International",
+      logo: riazahmad,
+      points: [
+      "Assisted in performing external audits of clients in various industries under the direct supervision of seniors and managers.",
+      "Carried out substantive testing on financial statement items such as cash and bank, receivables, payables, inventory, and fixed assets.",
+      "Prepared working papers and documented audit procedures performed in compliance with International Standards on Auditing (ISA).",
+      "Participated in interim and final audit engagements, including walkthroughs and control testing.",
+      "Assisted in vouching, verification, and analytical review procedures for various financial statement components.",
+      "Supported the team in gathering audit evidence, understanding clients’ accounting systems, and identifying potential issues.",
+      "Communicated and coordinated with client personnel for information requirements and clarifications.",
+      "Worked on basic tax and regulatory compliance tasks when required, including initial preparation of tax computations.",
+      "Developed a foundational understanding of applicable financial reporting frameworks (e.g., IFRS).",
+      "Served as Internal Auditor, responsible for maintaining Standard Operating Procedures (SOPs) for raw material procurement, conducting gap analysis, and providing recommendations for internal controls in accordance with industry practices.",
+      ],
+    },
+    {
+      date: "Oct 2021 – Dec 2021",
+      role: "Accounts Intern – Nishat Linen (PVT) Limited",
+      logo: ndf,
+      points: [
+        "Handled expense booking, journal voucher entries, and bank payment processing for rent and advertisement expenses.",
+        "Conducted stock count observations and recorded financial transactions through double entries on Oracle.",
+      ],
+    },
+  ];
 
-const education = [
-  { date: "2019 – Present", role: "CA  - ICAP (Part Qualified / Finalist)", desc: "CA Finalist at Institute of Chartered Accountants of Pakistan (ICAP) with 2 papers remaining." },
-  // { date: "2019 – 2021", role: "CAF – CA Intermediate", desc: "Institute of Chartered Accountants of Pakistan. Completed Certificate in Accounting and Finance in 2.5 years and commenced CA Articleship at Nexia International." },
-  { date: "2019 – Ongoing", role: "ACCA (Part Qualified / Finalist)", desc: "Association of Certified Chartered Accountants. Granted exemption from 8 papers based on CA Pakistan qualifications." },
-  { date: "(BSAF - 2026)", role: "Bachelor of Science in Accounting & Finance", desc: "Completing my bachelor's degree in Accounting & Finance from Lahore Leads University, Pakistan." },
-  { date: "2017 – 2018", role: "Senior High School (Grade 11–12)", desc: "Punjab Board of Intermediate and Secondary Education. Achieved 78% in board examinations while actively participating in table tennis and football." },
-  { date: "2015 – 2016", role: "High School (Grade 9–10)", desc: "Punjab Board of Intermediate and Secondary Education. Ranked top 3 in class throughout schooling, achieving 85% in board examinations." },
-];
+  const education = [
+    { date: "2019 – Present", role: "CA  - ICAP (Part Qualified / Finalist)", desc: "CA Finalist at Institute of Chartered Accountants of Pakistan (ICAP) with 2 papers remaining." },
+    // { date: "2019 – 2021", role: "CAF – CA Intermediate", desc: "Institute of Chartered Accountants of Pakistan. Completed Certificate in Accounting and Finance in 2.5 years and commenced CA Articleship at Nexia International." },
+    { date: "2019 – Ongoing", role: "ACCA (Part Qualified / Finalist)", desc: "Association of Certified Chartered Accountants. Granted exemption from 8 papers based on CA Pakistan qualifications." },
+    { date: "(BSAF - 2026)", role: "Bachelor of Science in Accounting & Finance", desc: "Completing my bachelor's degree in Accounting & Finance from Lahore Leads University, Pakistan." },
+    { date: "2017 – 2018", role: "Senior High School (Grade 11–12)", desc: "Punjab Board of Intermediate and Secondary Education. Achieved 78% in board examinations while actively participating in table tennis and football." },
+    { date: "2015 – 2016", role: "High School (Grade 9–10)", desc: "Punjab Board of Intermediate and Secondary Education. Ranked top 3 in class throughout schooling, achieving 85% in board examinations." },
+  ];
 
-const Entry = ({ date, role, children, isLast }) => (
-  <div className={`grid grid-cols-1 sm:grid-cols-[190px_1fr] gap-1 sm:gap-6 py-4 sm:py-5 ${!isLast ? "border-b border-gray-200" : ""}`}>
-    <div>
-          <p className="text-blue-700 text-sm font-medium mt-0.5">{role}</p>
+  const Entry = ({ date, role,logo,  children, isLast }) => (
+    <div className={`grid grid-cols-1 sm:grid-cols-[190px_1fr] gap-1 sm:gap-6 py-4 sm:py-5 ${!isLast ? "border-b border-gray-200" : ""}`}>
+      <div>
+            <p className="text-blue-700 text-sm font-medium mt-0.5">{role}</p>
 
-      <p className="text-blue-700 text-sm font-medium">{date}</p>
-    </div>
-    <div className="text-sm text-gray-600 leading-relaxed mt-1 sm:mt-0">{children}</div>
-  </div>
-);
-
-const SectionBlock = ({ title, children }) => (
-  <div className="border border-gray-200 rounded-xl p-4 sm:p-8 mb-6 sm:mb-8">
-    <h3 className="text-lg font-medium border-b-2 border-blue-700 inline-block pb-1 mb-5">{title}</h3>
-    {children}
-  </div>
-);
-
-const Resume = () => (
-  <div id="resume" className="bg-white px-4 sm:px-6 py-10 sm:py-16 text-gray-800">
-    <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-10">
-      <span className="text-blue-700">My</span> Resume
-    </h2>
-
-    <SectionBlock title="Experience">
-      {experience.map((e, i) => (
-        <Entry key={i} date={e.date} role={e.role} isLast={i === experience.length - 1}>
-          <ul className="list-disc pl-4 space-y-1">
-            {e.points.map((p, j) => <li key={j}>{p}</li>)}
-          </ul>
-        </Entry>
-      ))}
-    </SectionBlock>
-
-    <SectionBlock title="Education">
-      {education.map((e, i) => (
-        <Entry key={i} role={e.role} date={e.date} isLast={i === education.length - 1}>
-          <p>{e.desc}</p>
-        </Entry>
-      ))}
-    </SectionBlock>
-
-    {/* <SectionBlock title="Skills & Expertise">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-x-12">
-        {skills.map((skill, i) => (
-          <div key={i}>
-            <p className="text-sm mb-1">{skill.name}</p>
-            <div className="w-full bg-gray-200 h-1.5 rounded">
-              <div className="bg-blue-700 h-1.5 rounded" style={{ width: skill.level }} />
-            </div>
-          </div>
-        ))}
+        <p className="text-blue-700 text-sm font-medium">{date}</p>
+        <img src={logo}  className="w-42 h-14 object-cover rounded-full mt-7" />
       </div>
-    </SectionBlock> */}
-  </div>
-);
+      <div className="text-sm text-gray-600 leading-relaxed mt-1 sm:mt-0">{children}</div>
+    </div>
+  );
 
-export default Resume;
+    const Entryforedu = ({ date, role,  children, isLast }) => (
+    <div className={`grid grid-cols-1 sm:grid-cols-[190px_1fr] gap-1 sm:gap-6 py-4 sm:py-5 ${!isLast ? "border-b border-gray-200" : ""}`}>
+      <div>
+            <p className="text-blue-700 text-sm font-medium mt-0.5">{role}</p>
+
+        <p className="text-blue-700 text-sm font-medium">{date}</p>
+      </div>
+      <div className="text-sm text-gray-600 leading-relaxed mt-1 sm:mt-0">{children}</div>
+    </div>
+  );
+
+  const SectionBlock = ({ title, children }) => (
+    <div className="border border-gray-200 rounded-xl p-4 sm:p-8 mb-6 sm:mb-8">
+      <h3 className="text-lg font-medium border-b-2 border-blue-700 inline-block pb-1 mb-5">{title}</h3>
+      {children}
+    </div>
+  );
+
+  const Resume = () => (
+    <div id="resume" className="bg-white px-4 sm:px-6 py-10 sm:py-16 text-gray-800">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-10">
+        <span className="text-blue-700">My</span> Resume
+      </h2>
+
+      <SectionBlock title="Experience">
+        {experience.map((e, i) => (
+          <Entry key={i} date={e.date} role={e.role} logo={e.logo} isLast={i === experience.length - 1}>
+            <ul className="list-disc pl-4 space-y-1 justify-between">
+              {e.points.map((p, j) => <li key={j}>{p}</li>)}
+            </ul>
+          </Entry>
+        ))}
+      </SectionBlock>
+
+      <SectionBlock title="Education">
+        {education.map((e, i) => (
+          <Entryforedu key={i} role={e.role} date={e.date} isLast={i === education.length - 1}>
+            <p>{e.desc}</p>
+          </Entryforedu>
+        ))}
+      </SectionBlock>
+
+      {/* <SectionBlock title="Skills & Expertise">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-x-12">
+          {skills.map((skill, i) => (
+            <div key={i}>
+              <p className="text-sm mb-1">{skill.name}</p>
+              <div className="w-full bg-gray-200 h-1.5 rounded">
+                <div className="bg-blue-700 h-1.5 rounded" style={{ width: skill.level }} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </SectionBlock> */}
+    </div>
+  );
+
+  export default Resume;
