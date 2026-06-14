@@ -11,7 +11,9 @@ const About = () => {
           <h3 className="mt-4 text-lg font-medium">Chartered Accountant (Finalist)</h3>
           <p className="mt-2 text-sm text-gray-600 text-justify">
   As a Chartered Accountant (Finalist), I bring over four years of extensive experience in external auditing, specializing in conducting financial audits across various industries in compliance with IFRS and forensic audits. My role involves ensuring the accuracy and integrity of financial statements, while providing critical insights to clients on their financial reporting processes. I have had the opportunity to lead audit teams, where I took on the role of Audit Team Lead, effectively managing my team under pressure and ensuring the successful completion of audit engagements with tight deadlines.
-  <br/> I have also served as an Internal Auditor, where I was responsible for preparing in-depth Business Process Re-engineering (BPR), Internal audit reports, conducting gap analyses, and offering recommendations to enhance internal controls and align practices with industry standards.
+  <br/>
+  <br/>
+   I have also served as an Internal Auditor, where I was responsible for preparing in-depth Business Process Re-engineering (BPR), Internal audit reports, conducting gap analyses, and offering recommendations to enhance internal controls and align practices with industry standards.
 </p>
 
 <a
@@ -66,7 +68,7 @@ const About = () => {
               <h4 className="flex items-center gap-2 text-lg font-medium">
               Corporate Tax & VAT
               </h4>
-              <p className="text-sm text-gray-600">UAE Corporate Tax Compliance, Tax Computation and Return Preparation,VAT Reconciliations and Compliance Reviews, FTA Correspondence and Regulatory Compliance.</p>
+              <p className="text-sm text-gray-600">Corporate Tax Compliance, Tax Computation and Return Preparation,VAT Reconciliations and Compliance Reviews.</p>
             </div>
           </div>
         </div>

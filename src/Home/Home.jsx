@@ -183,7 +183,7 @@ function Home() {
         </motion.p>
 
         <motion.p
-          className="mt-1 text-base md:text-xl font-serif font-semibold tracking-wide text-white/90"
+          className="mt-1 text-base md:text-2xl font-serif font-semibold tracking-wide text-white/90"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
