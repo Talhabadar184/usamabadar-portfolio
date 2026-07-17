@@ -47,7 +47,7 @@ const STATS = [
   },
   {
     icon: <FaBrain />,
-    number: "4",
+    number: "4+",
     label: "Years Experience",
     color: "from-purple-400 to-pink-500",
     target: "resume",
@@ -189,7 +189,7 @@ function Home() {
           animate="visible"
           custom={4}
         >
-          SENUOR AUDITOR — CAPITAL PLUS AUDITING OF ACCOUNTS (CPA)
+          SENiOR AUDITOR — CAPITAL PLUS AUDITING OF ACCOUNTS (CPA)
         </motion.p>
 
         {/* Download Resume */}

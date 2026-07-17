@@ -347,7 +347,7 @@
   ];
 
   const education = [
-    { date: "2019 – Present", role: "CA  - ICAP (Part Qualified / Finalist)", desc: "CA Finalist at Institute of Chartered Accountants of Pakistan (ICAP) with 2 papers remaining." },
+    { date: "2019 – Present", role: "CA  - ICAP (Part Qualified / Finalist)", desc: "CA Finalist at Institute of Chartered Accountants of Pakistan (ICAP) with 1 paper remaining." },
     // { date: "2019 – 2021", role: "CAF – CA Intermediate", desc: "Institute of Chartered Accountants of Pakistan. Completed Certificate in Accounting and Finance in 2.5 years and commenced CA Articleship at Nexia International." },
     { date: "2019 – Ongoing", role: "ACCA (Part Qualified / Finalist)", desc: "Association of Certified Chartered Accountants. Granted exemption from 8 papers based on CA Pakistan qualifications." },
     { date: "(BSAF - 2026)", role: "Bachelor of Science in Accounting & Finance", desc: "Completing my bachelor's degree in Accounting & Finance from Lahore Leads University, Pakistan." },
