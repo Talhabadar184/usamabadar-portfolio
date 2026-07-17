@@ -189,7 +189,7 @@ function Home() {
           animate="visible"
           custom={4}
         >
-          SENiOR AUDITOR — CAPITAL PLUS AUDITING OF ACCOUNTS (CPA)
+          SENIOR AUDITOR — CAPITAL PLUS AUDITING OF ACCOUNTS (CPA)
         </motion.p>
 
         {/* Download Resume */}
