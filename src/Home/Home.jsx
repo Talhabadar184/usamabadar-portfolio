@@ -179,7 +179,7 @@ function Home() {
           animate="visible"
           custom={3}
         >
-          CA (F) &nbsp;|&nbsp; ACCA (F)
+          CA - FINALIST (20/21) | ACCA - PART QUALIFIED
         </motion.p>
 
         <motion.p
