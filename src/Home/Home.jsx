@@ -194,7 +194,7 @@ function Home() {
 
         {/* Download Resume */}
         <motion.a
-          href="/UsamaBadar-CV.pdf"
+          href="/Usama Badar CV (1).pdf"
           download
           className="mt-6 w-fit bg-blue-700 hover:bg-blue-600 text-white px-5 py-2 md:px-6 md:py-3
                      rounded-full flex items-center gap-2 shadow-lg transition-colors duration-200"
