@@ -351,8 +351,8 @@
     // { date: "2019 – 2021", role: "CAF – CA Intermediate", desc: "Institute of Chartered Accountants of Pakistan. Completed Certificate in Accounting and Finance in 2.5 years and commenced CA Articleship at Nexia International." },
     { date: "2019 – Ongoing", role: "ACCA (Part Qualified / Finalist)", desc: "Association of Certified Chartered Accountants. Granted exemption from 8 papers based on CA Pakistan qualifications." },
     { date: "(BSAF - 2026)", role: "Bachelor of Science in Accounting & Finance", desc: "Completing my bachelor's degree in Accounting & Finance from Lahore Leads University, Pakistan." },
-    { date: "2017 – 2018", role: "Senior High School (Grade 11–12)", desc: "Punjab Board of Intermediate and Secondary Education. Achieved 78% in board examinations while actively participating in table tennis and football." },
-    { date: "2015 – 2016", role: "High School (Grade 9–10)", desc: "Punjab Board of Intermediate and Secondary Education. Ranked top 3 in class throughout schooling, achieving 85% in board examinations." },
+    { date: "2017 – 2018", role: "Senior High School (Grade 11–12)", desc: " " },
+    { date: "2015 – 2016", role: "High School (Grade 9–10)", desc: " " },
   ];
 
   const Entry = ({ date, role,logo,  children, isLast }) => (
