@@ -33,28 +33,33 @@ const SOCIAL_LINKS = [
 const STATS = [
   {
     icon: <FaUser />,
-    number: "20+",
-    label: "Clients within deadlines",
+    number: "5+",
+    label: "Years of Experience", 
+    SubLabel: "Audit, Accounting & Financial Reporting",
     color: "from-blue-400 to-cyan-500",
     target: "clients",
   },
   {
     icon: <MdAssignmentAdd size={18} />,
-    number: "10+",
-    label: "Assignments as Team Lead",
+    number: "Multi-Sector",
+    label: " Industry Exposure",
+    SubLabel: "Manufacturing, Retail, Banking, Insurence & More",
     color: "from-blue-400 to-cyan-500",
     target: "clients",
   },
   {
     icon: <FaBrain />,
-    number: "4+",
-    label: "Years Experience",
+    number: "IFRS & ISA",
+    label: "Technical Expertise",
+    SubLabel: "Internation Financial Reporting & Auditing Standards",
     color: "from-purple-400 to-pink-500",
     target: "resume",
   },
   {
     icon: <TfiMicrosoftAlt size={18} />,
-    label: "Microsoft Office, Oracle & Power BI",
+    number: "5+",
+    label: "Professional Tools",
+    SubLabel: "CaseWare, Oracle, SAP, Odoo, Power BI & Excel",
     color: "from-emerald-400 to-teal-500",
     target: "certificates",
   },
@@ -110,6 +115,7 @@ function StatCard({ stat, index }) {
           </div>
         )}
         <div className="text-xs sm:text-sm text-white leading-snug">{stat.label}</div>
+        <div className="text-xs sm:text-sm text-white leading-snug">{stat.SubLabel}</div>
       </motion.div>
     </Link>
   );
